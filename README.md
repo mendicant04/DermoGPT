@@ -4,6 +4,9 @@
 
 > This codebase is built on top of [Qwen-VL-Series-Finetune](https://github.com/2U1/Qwen-VL-Series-Finetune). We thank the original authors for their excellent open-source fine-tuning framework.
 
+### DermoBench is available at https://huggingface.co/datasets/mendicant04/DermoBench
+### DermoInstruct is available at https://huggingface.co/datasets/mendicant04/DermoInstruct
+
 ## ✨ Highlights
 
 - 🧬 **Morphology-first reasoning**: supports outputs grounded in standardized dermatology morphology.
@@ -32,7 +35,6 @@
 └── README.md
 ```
 
-The `rubbish/` directory is a local archive of old scripts and is intentionally excluded from release uploads.
 
 ## 🧪 DermoBench Tasks
 
@@ -122,35 +124,7 @@ DEVICE=cuda:0 \
 bash scripts/infer_baseline_local.sh all
 ```
 
-Supported `MODEL_FAMILY` values:
-
-```text
-lingshu-7b
-lingshu-32b
-qwen3-vl-8b
-skinvl-mm
-custom
-```
-
-### LoRA Checkpoint
-
-```bash
-MODEL_PATH=/path/to/lora_checkpoint \
-LORA_MODE=sft \
-DATASET_ROOT=dataset_final \
-DEVICE=cuda:0 \
-bash scripts/infer_lora.sh all
-```
-
-Supported `LORA_MODE` values:
-
-```text
-sft
-rl
-tta
-```
-
-### OpenAI-Compatible API Backend
+### API Backend
 
 ```bash
 BASE_URL=https://your-api-endpoint/v1 \
@@ -194,7 +168,6 @@ Prompt details for model generation and judging are documented in [prompts.md](p
 - This repository is intended for code, prompts, benchmark metadata, and evaluation utilities.
 - Raw dermatology images are not redistributed here.
 - Users should download original images from the source datasets and follow their licenses and intended-use policies.
-- The benchmark JSONL files under `dataset_final/benchmark/**/*.jsonl` can be released separately when needed.
 
 ## ⚠️ Medical Disclaimer
 
@@ -210,4 +183,4 @@ This project builds on:
 
 ## 📚 Citation
 
-If you find this repository useful, please cite the DermoGPT paper. A BibTeX entry will be added after the paper metadata is finalized.
+If you find this repository useful, please cite the DermoGPT paper.
