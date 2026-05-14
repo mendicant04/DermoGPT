@@ -1,0 +1,33 @@
+# Local archive; keep out of public uploads.
+rubbish/
+
+# Large or separately released benchmark data files.
+dataset_final/benchmark/**/*.json
+dataset_final/benchmark/**/*.jsonl
+
+# Python/runtime artifacts.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Training and inference outputs.
+output/
+outputs/
+runs/
+logs/
+wandb/
+*.log
+
+# Local environment files.
+.env
+.venv/
+venv/
+
+# Model checkpoints and binary artifacts.
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.whl

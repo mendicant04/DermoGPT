@@ -1,0 +1,895 @@
+# coding: utf-8
+import os
+
+import argparse, warnings, json, os, sys, math, multiprocessing, re, hashlib, random
+import time, base64, mimetypes, threading
+from pathlib import Path
+
+from tqdm import tqdm
+from PIL import Image  # noqa: F401
+import requests
+
+warnings.filterwarnings("ignore")
+
+
+ERROR_THRESHOLD = 100
+PAUSE_DURATION_SECONDS = 20 * 60
+IO_SEMA = threading.Semaphore(4)
+
+device = "api"
+
+
+class ApiProvider:
+    def __init__(self, name, base_url, api_key, model, max_workers=12, timeout=(100, 1800)):
+        self.name = name
+        self.url = f"{base_url.strip('/')}/chat/completions"
+        self.api_key = api_key
+        self.model = model
+        self.max_workers = max_workers
+        self.timeout = timeout
+        self.lock = threading.Lock()
+        self.consecutive_errors = 0
+        self.paused_until = 0
+
+    def headers(self):
+        return {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {self.api_key}",
+        }
+
+    def ping(self):
+        try:
+            r = requests.post(
+                self.url,
+                headers=self.headers(),
+                json={
+                    "model": self.model,
+                    "messages": [{"role": "user", "content": "ping"}],
+                    "max_tokens": 8,
+                },
+                timeout=(5, 10),
+            )
+            r.raise_for_status()
+            tqdm.write(f"[PING OK] {self.name}")
+            return True
+        except Exception as e:
+            tqdm.write(f"[PING FAIL] {self.name} -> {e}")
+            return False
+
+    def is_paused(self):
+        if self.paused_until and time.time() < self.paused_until:
+            return True
+        if self.paused_until and time.time() >= self.paused_until:
+            with self.lock:
+                self.paused_until = 0
+            tqdm.write(f"[INFO] Provider '{self.name}' resumed.")
+        return False
+
+    def record_success(self):
+        with self.lock:
+            self.consecutive_errors = 0
+
+    def record_failure(self):
+        with self.lock:
+            self.consecutive_errors += 1
+            if self.consecutive_errors >= ERROR_THRESHOLD:
+                self.paused_until = time.time() + PAUSE_DURATION_SECONDS
+                tqdm.write(
+                    f"\n[CRITICAL] '{self.name}' paused {PAUSE_DURATION_SECONDS/60:.0f} min (too many errors)"
+                )
+                self.consecutive_errors = 0
+
+
+def b64_image_url(image_path: Path) -> str:
+    mime, _ = mimetypes.guess_type(str(image_path))
+    if not mime:
+        mime = "application/octet-stream"
+    with IO_SEMA:
+        raw = image_path.read_bytes()
+        b64 = base64.b64encode(raw).decode("utf-8")
+    return f"data:{mime};base64,{b64}"
+
+
+def call_chat(provider: ApiProvider, messages: list,
+              max_tokens: int = 1280,
+              temperature: float = 0.0,
+              retry: int = 3) -> str:
+    payload = {
+        "model": provider.model,
+        "messages": messages,
+        "temperature": temperature,
+        "max_tokens": max_tokens,
+    }
+    for a in range(retry):
+        try:
+            if provider.is_paused():
+                time.sleep(5)
+            r = requests.post(
+                provider.url,
+                headers=provider.headers(),
+                json=payload,
+                timeout=provider.timeout,
+            )
+            r.raise_for_status()
+            data = r.json()
+            txt = (
+                data.get("choices", [{}])[0]
+                .get("message", {})
+                .get("content", "")
+                .strip()
+            )
+            if not txt:
+                raise ValueError("Empty response")
+            provider.record_success()
+            return txt
+        except Exception as e:
+            provider.record_failure()
+            tqdm.write(f"[RETRY {a+1}/{retry}] {provider.name} -> {e}")
+            time.sleep(1.0 * (a + 1))
+    raise RuntimeError("API call failed after retries")
+
+
+SYSTEM_PROMPT_BASELINE = """
+You are an expert dermatology visual question answering assistant.
+
+You will be shown a dermoscopic or clinical skin lesion image and asked one or more
+multiple-choice classification questions in a hierarchical way about the SAME image.
+
+For every question you receive, follow these rules VERY STRICTLY:
+
+1. The user message will describe a question and then give a list of answer options,
+   usually in the following form:
+   - "Option 1", "Option 2", "Option 3", ...
+   - or similar comma-separated options in double quotes.
+
+2. Your task is to choose the single BEST option from this list.
+
+3. Your ENTIRE reply must be EXACTLY one of the option strings, copied verbatim:
+   - Do NOT add any other words.
+   - Do NOT add quotes around your answer.
+   - Do NOT prefix with letters such as "A)" or "B)".
+   - Do NOT explain your reasoning.
+   - Do NOT output multiple options.
+   - Do NOT output anything like "The correct answer is ...".
+   The output should be ONLY the chosen option text, nothing else.
+
+4. If you are unsure, you must still pick the single most plausible option and
+   output ONLY that option string.
+
+5. You may receive corrective messages like:
+   "Actually, that's incorrect. The correct category should be 'X'. Let's proceed with that."
+   These messages tell you what the correct option is for the PREVIOUS question.
+   Use this information as context, but still obey rules (1)-(4) for the NEXT question.
+
+6. You will be asked several questions about the same image in sequence.
+   Answer each question independently following the format rules above.
+"""
+
+# =========================
+
+# =========================
+TOP_LEVEL_PROMPTS_GEN = [
+    "Based on the clinical image, identify the most fitting major dermatological category from the following list: {options_list}.",
+    "Observe the skin lesion. Which of these high-level classifications best describes it? Here are the possibilities: {options_list}.",
+    "Please provide a broad categorization for the skin condition shown. Your answer should be one of the following: {options_list}."
+]
+SUB_LEVEL_PROMPTS_GEN = [
+    "Correct, the condition is a form of '{parent_category}'. Now, specify the sub-category from this list: {options_list}.",
+    "Proceeding from '{parent_category}', which of the following groups does this lesion belong to? {options_list}.",
+    "Understood. Let's refine the diagnosis within '{parent_category}'. Please choose the most accurate description from the following: {options_list}."
+]
+FINAL_LEVEL_PROMPTS_GEN = [
+    "We've classified this under '{parent_category}'. Now, provide the definitive diagnosis from the choices available: {options_list}.",
+    "Excellent. To finalize, please state the specific diagnosis for '{parent_category}', which should be one of the following: {options_list}.",
+    "Perfect. Based on our hierarchical classification ending with '{parent_category}', please identify the definitive diagnosis from this list: {options_list}."
+]
+
+
+HUMAN_CORRECTION_PROMPTS = [
+    "Actually, that's incorrect. A closer look reveals features more consistent with '{correct_choice}'. Please correct the path.",
+    "That's not quite right. The correct category here should be '{correct_choice}'. Let's proceed with that.",
+    "Incorrect. The diagnosis should be '{correct_choice}'. Continue from this category."
+]
+
+# =========================
+
+# =========================
+def load_json_array(path):
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    if not isinstance(data, list):
+        raise ValueError("Input file top-level value must be a JSON array")
+    return data
+
+
+def jsonl_ids(path):
+    ids = set()
+    if not os.path.exists(path):
+        return ids
+    with open(path, "r", encoding="utf-8") as f:
+        for line in f:
+            if line.strip():
+                try:
+                    ids.add(json.loads(line).get("id"))
+                except Exception:
+                    pass
+    return ids
+
+
+def merge_jsonl_to_array(input_items, jsonl_path, out_array_path):
+    id2obj = {}
+    with open(jsonl_path, "r", encoding="utf-8") as f:
+        for line in f:
+            if line.strip():
+                obj = json.loads(line)
+                id2obj[obj.get("id")] = obj
+    out, missing = [], 0
+    for it in input_items:
+        _id = it.get("id")
+        if _id in id2obj:
+            out.append(id2obj[_id])
+        else:
+            missing += 1
+    if missing:
+        print(f"Warning: {missing} samples did not produce outputs (missing images or errors were skipped).", file=sys.stderr)
+    with open(out_array_path, "w", encoding="utf-8") as f:
+        json.dump(out, f, ensure_ascii=False, indent=2)
+    print(f"[Merge complete] {out_array_path} total {len(out)} items.")
+
+
+# =========================
+
+# =========================
+def get_options_for_path(hierarchy_top_down, path=None):
+    if path is None:
+        path = []
+    node = hierarchy_top_down
+    for key in path:
+        if isinstance(node, dict) and key in node:
+            node = node[key]
+        else:
+            return [], []
+    if isinstance(node, dict):
+        sub_categories = [k for k in node.keys() if k != "_items_"]
+        items = node.get("_items_", [])
+        return sub_categories, items
+    elif isinstance(node, list):
+        return [], node
+    return [], []
+
+
+def stable_shuffle(options, seed_str):
+    rnd = random.Random(
+        int(hashlib.md5(seed_str.encode("utf-8")).hexdigest(), 16) % (10**9 + 7)
+    )
+    opts = list(options)
+    rnd.shuffle(opts)
+    return opts
+
+
+def format_options(options):
+    return ", ".join(f"\"{opt}\"" for opt in options)
+
+
+def parse_gt_from_singleturn(gt_text):
+
+    text = gt_text.strip()
+    text = re.sub(r"^[A-Ha-h]\)\s*", "", text)
+    text = text.strip().strip('"').strip("'")
+    return text
+
+
+def normalize(s):
+    return re.sub(r"\s+", " ", (s or "")).strip().lower()
+
+
+def _tokens(x):
+    return set(re.findall(r"\w+", normalize(x)))
+
+
+def best_match_in_options(target, options, jaccard_thr=0.35):
+    t_norm = normalize(target)
+    if not options:
+        return None
+
+
+    for opt in options:
+        if normalize(opt) == t_norm:
+            return opt
+
+
+    for opt in options:
+        on = normalize(opt)
+        if t_norm in on or on in t_norm:
+            return opt
+
+
+    t_tok = _tokens(target)
+    best, best_s = None, 0.0
+    for opt in options:
+        o_tok = _tokens(opt)
+        if not o_tok:
+            continue
+        inter = len(t_tok & o_tok)
+        uni = len(t_tok | o_tok)
+        s = inter / (uni + 1e-9)
+        if s > best_s:
+            best_s, best = s, opt
+    return best if best_s >= jaccard_thr else None
+
+
+def extract_choice_from_text(model_text, options):
+
+    mt = model_text or ""
+    mt_norm = normalize(mt)
+    idx_hits = []
+    for i, opt in enumerate(options):
+        on = normalize(opt)
+        if on and on in mt_norm:
+            idx_hits.append((i, mt_norm.find(on)))
+    if idx_hits:
+        idx_hits.sort(key=lambda x: x[1])
+        return options[idx_hits[0][0]]
+
+    def tokens(x):
+        return set(re.findall(r"\w+", normalize(x)))
+
+    mt_tok = tokens(mt)
+    best_i, best_score = -1, 0.0
+    for i, opt in enumerate(options):
+        t = tokens(opt)
+        if not t:
+            continue
+        inter = len(mt_tok & t)
+        uni = len(mt_tok | t)
+        score = inter / (uni + 1e-9)
+        if score > best_score:
+            best_score, best_i = score, i
+    if best_score >= 0.5:
+        return options[best_i]
+    return None
+
+
+# =========================
+
+# =========================
+def build_question(kind, level_idx, parent_category, options, sample_id):
+    options_shuffled = stable_shuffle(options, f"{sample_id}-{kind}-{level_idx}")
+    if kind == "top":
+        tmpl = stable_shuffle(TOP_LEVEL_PROMPTS_GEN, f"top-{sample_id}")[0]
+        q = tmpl.format(options_list=format_options(options_shuffled))
+        return q, options_shuffled
+    elif kind == "sub":
+        tmpl = stable_shuffle(
+            SUB_LEVEL_PROMPTS_GEN, f"sub-{sample_id}-{level_idx}"
+        )[0]
+        q = tmpl.format(
+            parent_category=parent_category,
+            options_list=format_options(options_shuffled),
+        )
+        return q, options_shuffled
+    else:  # final
+        tmpl = stable_shuffle(
+            FINAL_LEVEL_PROMPTS_GEN, f"final-{sample_id}-{level_idx}"
+        )[0]
+        q = tmpl.format(
+            parent_category=parent_category,
+            options_list=format_options(options_shuffled),
+        )
+        return q, options_shuffled
+
+
+# =========================
+
+# =========================
+def run_one_generation(conversation, generation_args, provider: ApiProvider):
+    max_new_tokens = int(generation_args.get("max_new_tokens", 1280))
+    temperature = float(generation_args.get("temperature", 0.0))
+    model_text = call_chat(
+        provider,
+        messages=conversation,
+        max_tokens=max_new_tokens,
+        temperature=temperature,
+    )
+    return model_text
+
+
+# =========================
+
+# =========================
+def run_dynamic_eval_on_item(
+    item,
+    image_base_path,
+    generation_args,
+    mapping_data,
+    hierarchy_bottom_up,
+    hierarchy_top_down,
+    provider: ApiProvider,
+    attach_system_prompt=False,
+    max_depth=12,
+):
+    global device
+
+    image_rel = item.get("image")
+    if not image_rel:
+        return None, 0, 0, 0
+    image_abs = os.path.join(image_base_path, image_rel)
+    if not os.path.exists(image_abs):
+        print(
+            f"[{device}] Warning: image does not exist (ID:{item.get('id')}) at {image_abs}, skipping.",
+            file=sys.stderr,
+        )
+        return None, 0, 0, 0
+
+
+    gt_conv = item.get("conversations", [])
+    gt_label = None
+    for t in gt_conv:
+        if t.get("from") == "gpt":
+            gt_label = parse_gt_from_singleturn(t.get("value", ""))
+            break
+    if not gt_label:
+        return None, 0, 0, 0
+    canonical_dx = mapping_data.get(gt_label, gt_label)
+    true_path = hierarchy_bottom_up.get(canonical_dx)
+    if not true_path or not isinstance(true_path, list):
+        return None, 0, 0, 0
+
+
+    out_item = {
+        "id": item.get("id"),
+        "image": item.get("image"),
+        "conversations": [],
+    }
+    convo_for_model = []
+
+    if attach_system_prompt:
+        convo_for_model.append(
+            {
+                "role": "system",
+                "content": [
+                    {
+                        "type": "text",
+                        "text": SYSTEM_PROMPT_BASELINE.strip(),
+                    }
+                ],
+            }
+        )
+
+
+    step_correct = 0
+    step_total = 0
+    corrections_count = 0
+
+    current_path = []
+    depth = 0
+    first_turn = True
+    parent_category = None
+
+
+    image_url = b64_image_url(Path(image_abs))
+
+    while depth < max_depth:
+        sub_categories, items = get_options_for_path(hierarchy_top_down, current_path)
+
+
+        canonical_item = best_match_in_options(canonical_dx, items)
+        canonical_in_items = canonical_item is not None
+
+        if canonical_in_items:
+
+            leaf_options = list(items)
+
+
+            if len(leaf_options) == 1:
+                break
+
+            level_idx = len(true_path)
+            kind = "final"
+            q_text, options_ordered = build_question(
+                kind=kind,
+                level_idx=level_idx,
+                parent_category=parent_category,
+                options=leaf_options,
+                sample_id=item.get("id", ""),
+            )
+            gold_label = (
+                best_match_in_options(canonical_dx, options_ordered)
+                or options_ordered[0]
+            )
+
+        else:
+
+            if not sub_categories:
+
+                if items:
+                    if len(items) == 1:
+                        break
+                    level_idx = len(true_path)
+                    kind = "final"
+                    q_text, options_ordered = build_question(
+                        kind=kind,
+                        level_idx=level_idx,
+                        parent_category=parent_category,
+                        options=items,
+                        sample_id=item.get("id", ""),
+                    )
+                    gold_label = (
+                        best_match_in_options(canonical_dx, options_ordered)
+                        or options_ordered[0]
+                    )
+                else:
+                    break
+            else:
+                next_cat = true_path[depth] if depth < len(true_path) else None
+                gold_exact = (
+                    best_match_in_options(next_cat, sub_categories)
+                    or sub_categories[0]
+                )
+
+                kind = "top" if first_turn else "sub"
+                q_text, options_ordered = build_question(
+                    kind=kind,
+                    level_idx=depth,
+                    parent_category=parent_category,
+                    options=sub_categories,
+                    sample_id=item.get("id", ""),
+                )
+                gold_label = (
+                    best_match_in_options(gold_exact, options_ordered)
+                    or options_ordered[0]
+                )
+
+
+        human_value_to_write = (
+            ("<image>\n" + q_text) if first_turn else q_text
+        )
+        out_item["conversations"].append(
+            {"from": "human", "value": human_value_to_write}
+        )
+
+
+        if first_turn:
+            convo_for_model.append(
+                {
+                    "role": "user",
+                    "content": [
+                        {"type": "text", "text": q_text},
+                        {"type": "image_url", "image_url": {"url": image_url}},
+                    ],
+                }
+            )
+        else:
+            convo_for_model.append(
+                {"role": "user", "content": [{"type": "text", "text": q_text}]}
+            )
+
+        model_text = run_one_generation(convo_for_model, generation_args, provider)
+        if model_text is None:
+            out_item["conversations"].append({"from": "gpt", "value": ""})
+            break
+        out_item["conversations"].append(
+            {"from": "gpt", "value": model_text}
+        )
+
+
+        step_total += 1
+        pred_choice = extract_choice_from_text(model_text, options_ordered)
+
+        if pred_choice is not None and normalize(pred_choice) == normalize(gold_label):
+            step_correct += 1
+            if canonical_in_items:
+
+                break
+            else:
+
+                parent_category = pred_choice
+                current_path.append(pred_choice)
+                depth += 1
+                first_turn = False
+                continue
+
+
+        corrections_count += 1
+        corr_tmpl = stable_shuffle(
+            HUMAN_CORRECTION_PROMPTS,
+            f"corr-{item.get('id','')}-{depth}",
+        )[0]
+        corr_text = corr_tmpl.format(correct_choice=gold_label)
+        out_item["conversations"].append(
+            {"from": "human", "value": corr_text}
+        )
+        convo_for_model.append(
+            {"role": "user", "content": [{"type": "text", "text": corr_text}]}
+        )
+        corr_reply = run_one_generation(
+            convo_for_model, generation_args, provider
+        )
+        out_item["conversations"].append(
+            {"from": "gpt", "value": corr_reply or ""}
+        )
+
+
+        if canonical_in_items:
+            break
+        else:
+            parent_category = gold_label
+            current_path.append(gold_label)
+            depth += 1
+            first_turn = False
+
+    out_item["corrections"] = corrections_count
+    return out_item, step_correct, step_total, corrections_count
+
+
+# =========================
+
+# =========================
+def worker_proc(
+    tasks,
+    worker_idx,
+    device_id,
+    image_base_path,
+    generation_args,
+    cli_args,
+    shared_jsonl_path,
+    lock,
+    processed_ids,
+    mapping_data,
+    hierarchy_bottom_up,
+    hierarchy_top_down,
+):
+    global device
+    device = f"api-worker-{worker_idx}"
+    print(
+        f"[Worker {worker_idx} on {device}]: Initializing API provider...",
+        flush=True,
+    )
+    provider = ApiProvider(
+        name=f"T22-{worker_idx}",
+        base_url=cli_args.base_url,
+        api_key=cli_args.api_key,
+        model=cli_args.model,
+        max_workers=1,
+        timeout=(10, 1800),
+    )
+    # provider.ping()
+    print(
+        f"[Worker {worker_idx} on {device}]: Provider ready, {len(tasks)} items.",
+        flush=True,
+    )
+
+    sum_correct, sum_total, sum_corr = 0, 0, 0
+    for item in tqdm(
+        tasks, desc=f"Worker {worker_idx}", position=worker_idx, file=sys.stdout
+    ):
+        _id = item.get("id")
+        if processed_ids is not None and _id in processed_ids:
+            continue
+
+        out_item, c, t, corr = run_dynamic_eval_on_item(
+            item,
+            image_base_path,
+            generation_args,
+            mapping_data,
+            hierarchy_bottom_up,
+            hierarchy_top_down,
+            provider=provider,
+            attach_system_prompt=not cli_args.disable_system_prompt,
+            max_depth=cli_args.max_depth,
+        )
+        sum_correct += c
+        sum_total += t
+        sum_corr += corr
+        if out_item is None:
+            continue
+
+
+        with lock:
+            with open(shared_jsonl_path, "a", encoding="utf-8") as f:
+                f.write(json.dumps(out_item, ensure_ascii=False) + "\n")
+
+    return sum_correct, sum_total, sum_corr, len(tasks)
+
+
+def main(args):
+    generation_args = {
+        "max_new_tokens": args.max_new_tokens,
+        "temperature": args.temperature,
+        "do_sample": True if args.temperature > 0 else False,
+        "repetition_penalty": args.repetition_penalty,
+    }
+
+
+    output_dir = args.output_dir or os.path.dirname(args.json_file) or "."
+    os.makedirs(output_dir, exist_ok=True)
+
+
+    input_data = load_json_array(args.json_file)
+    base = os.path.splitext(os.path.basename(args.json_file))[0]
+    loaded_model_name = args.loaded_model_name
+    shared_jsonl = os.path.join(
+        output_dir, f"{base}_{loaded_model_name}_hierarchical.jsonl"
+    )
+    out_array = os.path.join(
+        output_dir, f"{base}_{loaded_model_name}_hierarchical_infer.json"
+    )
+    metric_path = os.path.join(
+        output_dir, f"{base}_{loaded_model_name}_hierarchical_metrics.json"
+    )
+
+
+    with open(args.mapping_json, "r", encoding="utf-8") as f:
+        mapping_data = json.load(f)
+    with open(args.hierarchy_bottom_up, "r", encoding="utf-8") as f:
+        hierarchy_bottom_up = json.load(f)
+    with open(args.hierarchy_top_down, "r", encoding="utf-8") as f:
+        hierarchy_top_down = json.load(f)
+
+    processed_ids = jsonl_ids(shared_jsonl) if os.path.exists(shared_jsonl) else set()
+    if processed_ids:
+        print(f"[{base}] Existing JSONL found; skipped {len(processed_ids)} items.")
+
+
+    chunk_size = math.ceil(len(input_data) / max(1, args.num_workers))
+    chunks = [
+        input_data[i : i + chunk_size]
+        for i in range(0, len(input_data), chunk_size)
+    ]
+
+    manager = multiprocessing.Manager()
+    lock = manager.Lock()
+
+    job_args = []
+    devices = [args.device for _ in range(len(chunks))]
+    for i in range(len(chunks)):
+        job_args.append(
+            (
+                chunks[i],
+                i,
+                devices[i],
+                args.image_base_path,
+                generation_args,
+                args,
+                shared_jsonl,
+                lock,
+                processed_ids,
+                mapping_data,
+                hierarchy_bottom_up,
+                hierarchy_top_down,
+            )
+        )
+
+    print(f"Image root: {args.image_base_path}")
+    print(f"Input file:   {args.json_file}")
+    print(f"Output directory:   {output_dir}")
+    print(f"Parallel workers:     {args.num_workers} @ {args.device}")
+    print(f"System Prompt: {'DISABLED' if args.disable_system_prompt else 'ENABLED'}")
+    print(f"Max Depth:   {args.max_depth}")
+    print(f"API base:    {args.base_url}")
+    print(f"API model:   {args.model}")
+    print("\n" * len(chunks))
+
+
+    with multiprocessing.Pool(processes=len(chunks)) as pool:
+        worker_stats = pool.starmap(worker_proc, job_args)
+
+
+    merge_jsonl_to_array(input_data, shared_jsonl, out_array)
+
+
+    total_correct = sum(s[0] for s in worker_stats)
+    total_steps = sum(s[1] for s in worker_stats)
+    total_corr = sum(s[2] for s in worker_stats)
+    total_cases = sum(s[3] for s in worker_stats)
+    stepacc_micro = (total_correct / total_steps) if total_steps > 0 else 0.0
+    avg_corr = (total_corr / total_cases) if total_cases > 0 else 0.0
+
+
+    zero_corr = 0
+    with open(shared_jsonl, "r", encoding="utf-8") as f:
+        for line in f:
+            if not line.strip():
+                continue
+            obj = json.loads(line)
+            if int(obj.get("corrections", 0)) == 0:
+                zero_corr += 1
+    pct_zero_corr = (zero_corr / total_cases) if total_cases > 0 else 0.0
+
+    metrics = {
+        "step_correct": int(total_correct),
+        "step_total": int(total_steps),
+        "StepAcc_micro": stepacc_micro,
+        "total_corrections": int(total_corr),
+        "avg_corrections_per_case": avg_corr,
+        "pct_zero_correction": pct_zero_corr,
+    }
+    with open(metric_path, "w", encoding="utf-8") as f:
+        json.dump(metrics, f, ensure_ascii=False, indent=2)
+    print(f"\n=== Metrics ===")
+    print(f"Correct / Total Steps = {total_correct} / {total_steps}")
+    print(f"StepAcc_micro         = {stepacc_micro:.4f}")
+    print(f"Total Corrections     = {total_corr}")
+    print(f"Avg Corrections/Case  = {avg_corr:.3f}")
+    print(f"% Zero-Correction     = {pct_zero_corr:.3%}")
+    print(f"Metrics written to:{metric_path}")
+    print("Done.")
+
+
+if __name__ == "__main__":
+    multiprocessing.set_start_method("spawn", force=True)
+    parser = argparse.ArgumentParser()
+
+
+    parser.add_argument("--model-path", type=str, default=None)
+    parser.add_argument(
+        "--model-base", type=str, default="Qwen/Qwen3-VL-8B-Instruct"
+    )
+    parser.add_argument("--device", type=str, default="cuda:0")
+    parser.add_argument("--load-8bit", action="store_true")
+    parser.add_argument("--load-4bit", action="store_true")
+    parser.add_argument("--disable_flash_attention", action="store_true")
+    parser.add_argument("--loaded-model-name", type=str, required=True)
+
+
+    parser.add_argument("--temperature", type=float, default=0.0)
+    parser.add_argument("--repetition-penalty", type=float, default=1.0)
+    parser.add_argument("--max-new-tokens", type=int, default=4096)
+
+
+    parser.add_argument(
+        "--image-base-path",
+        type=str,
+        default="dataset_final",
+    )
+    parser.add_argument(
+        "--json-file",
+        type=str,
+        default="dataset_final/sft_train_test/test/json_data/task2.1_test_2k_non_uniform_sample.json",
+    )
+    parser.add_argument(
+        "--hierarchy-bottom-up",
+        type=str,
+        default="dataset_final/task2/2.1_mcq_hard/diagnosis_hierarchical_final_doc_response_1017.json",
+    )
+    parser.add_argument(
+        "--hierarchy-top-down",
+        type=str,
+        default="dataset_final/task2/2.1_mcq_hard/diagnosis_hierarchical_final_doc_response_reverse_1017.json",
+    )
+    parser.add_argument(
+        "--mapping-json",
+        type=str,
+        default="dataset_final/task2/diagnosis_mapping_final_1015.json",
+    )
+
+
+    parser.add_argument("--num-workers", type=int, default=1)
+    parser.add_argument("--output-dir", type=str, default="")
+    parser.add_argument("--max-depth", type=int, default=12)
+
+    # System Prompt
+    parser.add_argument("--disable-system-prompt", action="store_true")
+
+
+    parser.add_argument(
+        "--base_url",
+        type=str,
+        default=os.environ.get("BASE_URL", ""),
+        help="API gateway base URL",
+    )
+    parser.add_argument(
+        "--api_key",
+        type=str,
+        default="",
+        help="API key; pass it on the command line or through the environment",
+    )
+    parser.add_argument(
+        "--model",
+        type=str,
+        default=os.environ.get("API_MODEL", ""),
+        help="closed-source model name; gateway model identifier",
+    )
+
+    args = parser.parse_args()
+    main(args)
