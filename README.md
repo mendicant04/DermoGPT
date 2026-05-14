@@ -4,6 +4,7 @@
 
 > This codebase is built on top of [Qwen-VL-Series-Finetune](https://github.com/2U1/Qwen-VL-Series-Finetune). We thank the original authors for their excellent open-source fine-tuning framework.
 
+### DermoGPT is available at https://huggingface.co/mendicant04/DermoGPT-RL
 ### DermoBench is available at https://huggingface.co/datasets/mendicant04/DermoBench
 ### DermoInstruct is available at https://huggingface.co/datasets/mendicant04/DermoInstruct
 
