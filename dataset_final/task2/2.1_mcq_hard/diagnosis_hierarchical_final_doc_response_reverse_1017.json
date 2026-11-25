@@ -1,0 +1,497 @@
+{
+  "Infections & Infestations": {
+    "Bacterial Infections": [
+      "Abscess",
+      "Bacterial Infections",
+      "Cellulitis / Erysipelas",
+      "Ecthyma",
+      "Ecthyma Gangrenosum",
+      "Folliculitis / Furuncle",
+      "Impetigo",
+      "Paronychia",
+      "Pitted Keratolysis",
+      "Syphilis",
+      "Tuberculosis Of Skin And Subcutaneous Tissue",
+      "Wound Infection"
+    ],
+    "Fungal Infections (Mycoses)": [
+      "Candidiasis",
+      "Coccidioidomycosis",
+      "Fungal Infection",
+      "Kerion",
+      "Lymphocutaneous Sporotrichosis",
+      "Nail Fungus (Onychomycosis)"
+    ],
+    "Viral Infections": {
+      "Viral Exanthems": [
+        "Hand Foot And Mouth Disease",
+        "Varicella / Chicken Pox Exanthem",
+        "Viral Exanthem"
+      ],
+      "_items_": [
+        "Condyloma Acuminatum",
+        "Herpes / HPV / STDs",
+        "Herpes Virus Infection",
+        "Molluscum Contagiosum",
+        "Viral Dermatological Disorders",
+        "Viral Infections",
+        "Wart / Verruca"
+      ]
+    },
+    "Parasitic Infestations & Bites": {
+      "Worm/Larva Infections": [
+        "Cutaneous Larva Migrans",
+        "Nematode Infection",
+        "Tungiasis"
+      ],
+      "Arthropod Bites/Reactions": [
+        "Erythema Migrans",
+        "Flea Bite Dermatosis",
+        "Myiasis",
+        "Pediculosis Lids",
+        "Rocky Mountain Spotted Fever",
+        "Tick Bite"
+      ],
+      "_items_": [
+        "Scabies / Lyme Disease / Infestations and Bites"
+      ]
+    },
+    "General / Broad Categories": [
+      "Skin Infection"
+    ]
+  },
+  "Disorders of Pigmentation": {
+    "Hyperpigmentation": [
+      "Acanthosis Nigricans",
+      "Acral Melanotic Macule",
+      "Cafe Au Lait Macule",
+      "Erythema Dyschromicum Perstans",
+      "Hyperpigmentation",
+      "Lentigo / Solar Lentigo / Actinic Pigmentation",
+      "Melanin Pigmentation Due To Exogenous Substance",
+      "Melasma",
+      "Mucosal Melanotic Macule",
+      "Ochronosis",
+      "Poikiloderma",
+      "Urticaria Pigmentosa"
+    ],
+    "Hypopigmentation": [
+      "Hypopigmentation",
+      "Idiopathic Guttate Hypomelanosis",
+      "Nevus Anemicus",
+      "Pityriasis Alba",
+      "Vitiligo"
+    ],
+    "General / Broad Categories": [
+      "Light Diseases / Disorders of Pigmentation"
+    ]
+  },
+  "Inflammatory Dermatoses": {
+    "Acneiform Disorders": [
+      "Acne",
+      "Acne / Rosacea",
+      "Acne Keloidalis Nuchae",
+      "Hidradenitis Suppurativa",
+      "Rosacea"
+    ],
+    "Urticaria & Erythemas": {
+      "Reactive Erythemas": [
+        "Annular Erythema",
+        "Erythema Annulare Centrifugum",
+        "Erythema Gyratum Repens",
+        "Erythema Marginatum",
+        "Erythema Multiforme",
+        "Erythema Nodosum",
+        "Flagellate Erythema"
+      ],
+      "Other Erythemas": [
+        "Erythema Ab Igne"
+      ],
+      "_items_": [
+        "Acne Urticata",
+        "Urticaria"
+      ]
+    },
+    "Other Inflammatory Conditions": [
+      "Angular Cheilitis",
+      "Atrophic Glossitis",
+      "Chalazion",
+      "Cheilitis",
+      "Follicular Pustules",
+      "Fox Fordyce Disease",
+      "Geographic Tongue",
+      "Jessner Lymphocytic Infiltrate",
+      "Prurigo / Prurigo Nodularis",
+      "Pruritic Urticarial Papules and Plaques of Pregnancy",
+      "Pustules",
+      "Relapsing Polychondritis",
+      "Stomatitis",
+      "Unilateral Laterothoracic Exanthem"
+    ],
+    "Vesiculobullous (Blistering) Diseases": {
+      "Other Blistering Conditions": [
+        "Bullosis Diabeticorum",
+        "Hemorrhagic Bullae"
+      ],
+      "Autoimmune Blistering Diseases": [
+        "Bullous Pemphigoid",
+        "Dermatitis Herpetiformis",
+        "Herpes Gestationis",
+        "Linear Iga Disease",
+        "Pemphigus"
+      ],
+      "_items_": [
+        "Blister / Bullous Lesion / Vesicles / Bullae",
+        "Bullous Disease"
+      ]
+    },
+    "Vasculitis & Vascular Disorders": [
+      "Contact Purpura",
+      "Erythema Elevatum Diutinum",
+      "Livedo Reticularis",
+      "Purpura / Petechiae / Ecchymosis",
+      "Schamberg's Disease / Pigmented Purpuric Eruption",
+      "Solar Purpura / Actinic Purpura",
+      "Varicose Vein",
+      "Vasculitis"
+    ],
+    "Eczematous Disorders (Dermatitis)": [
+      "Desquamation",
+      "Eczema / Dermatitis",
+      "Hemosiderin Pigmentation / Stasis Dermatitis / Edema",
+      "Intertrigo",
+      "Perioral Dermatitis"
+    ],
+    "Granulomatous Disorders": [
+      "Granulomatous Disorder",
+      "Majocchi Granuloma",
+      "Necrobiosis Lipoidica",
+      "Sarcoidosis"
+    ],
+    "Papulosquamous Disorders": [
+      "Grover's Disease",
+      "Koebner Phenomenon",
+      "Lichen Nitidus",
+      "Lichen Planus",
+      "Lichen Simplex Chronicus",
+      "Lichen Spinulosus",
+      "Lichen Striatus",
+      "Parapsoriasis",
+      "Pityriasis Lichenoides",
+      "Pityriasis Rosea",
+      "Pityriasis Rubra Pilaris",
+      "Psoriasis",
+      "Psoriasis / Lichen Planus"
+    ],
+    "General / Broad Categories": [
+      "Inflammatory / Infectious Disorder",
+      "Inflammatory Changes on Sun-Damaged Skin",
+      "Inflammatory Dermatosis"
+    ],
+    "Neutrophilic Dermatoses": [
+      "Neutrophilic Dermatoses",
+      "Pyoderma Gangrenosum",
+      "Sneddon-Wilkinson Disease"
+    ]
+  },
+  "Disorders of Keratinization & Mucin Deposition": {
+    "Mucinosis": [
+      "Acral Persistent Papular Mucinosis",
+      "Discrete Papular Lichen Myxedematosus",
+      "Follicular Mucinosis",
+      "Inflammatory Mucinosis",
+      "Mucinosis",
+      "Scleromyxedema / Lichenoid Myxedema"
+    ],
+    "Amyloidosis": [
+      "Cutaneous Amyloidosis",
+      "Lichen Amyloidosis"
+    ],
+    "Keratosis & Keratodermas": [
+      "Disseminated Actinic Porokeratosis",
+      "Focal Acral Hyperkeratosis",
+      "Hyperkeratosis",
+      "Keratoderma",
+      "Keratolysis Exfoliativa",
+      "Keratosis",
+      "Kyrle's Disease",
+      "Perforating Dermatosis",
+      "Porokeratosis"
+    ]
+  },
+  "Manifestations of Systemic Disease & Other Conditions": {
+    "Cutaneous Manifestations of Systemic Disease": {
+      "Gastrointestinal": [
+        "Acrodermatitis Enteropathica"
+      ],
+      "Vascular/Circulatory": [
+        "Cutis Marmorata",
+        "Mal Perforans",
+        "Venous Stasis Ulcer"
+      ],
+      "Metabolic/Endocrine": [
+        "Eruptive Xanthoma",
+        "Juvenile Xanthogranuloma",
+        "Verruciform Xanthoma",
+        "Xanthogranuloma",
+        "Xanthomas"
+      ],
+      "_items_": [
+        "Calcinosis Cutis",
+        "Graft Vs Host Disease",
+        "Langerhans Cell Histiocytosis",
+        "Systemic Disease"
+      ]
+    },
+    "Miscellaneous & Morphological Terms": [
+      "Anetoderma",
+      "Crowe's Sign",
+      "Elephantiasis Nostras",
+      "Erythroderma / Exfoliative Dermatitis",
+      "Flushing",
+      "Ganglion",
+      "Granular Parakeratosis",
+      "Hyperlinear Palm",
+      "Hypersensitivity Reaction",
+      "Papillomatosis Confluentes And Reticulate",
+      "Pearl Penile Papules",
+      "Skin Atrophy",
+      "Striae / Stretch Marks",
+      "Toe Deformity",
+      "Xerosis"
+    ],
+    "Uncategorized": [
+      "Mucha Habermann Disease",
+      "Other / Not Specified"
+    ]
+  },
+  "Autoimmune, Connective Tissue & Genetic Diseases": {
+    "Genodermatoses (Inherited Skin Disorders)": {
+      "Nevi Syndromes": [
+        "Epidermal Nevus",
+        "Linear Epidermal Nevus",
+        "Naevus Comedonicus",
+        "Nevus Comedonicus",
+        "Nevus Lipomatosus Superficialis",
+        "Nevus Sebaceous of Jadassohn"
+      ],
+      "_items_": [
+        "Acrokeratosis Verruciformis",
+        "Aplasia Cutis Congenita",
+        "Darier's Disease",
+        "Ehlers Danlos Syndrome",
+        "Epidermolysis Bullosa",
+        "Genodermatoses",
+        "Hailey Hailey Disease",
+        "Ichthyosis",
+        "Incontinentia Pigmenti",
+        "Pseudoxanthoma Elasticum (PXE)-Like Syndrome",
+        "Tuberous Sclerosis",
+        "Xeroderma Pigmentosum"
+      ]
+    },
+    "Autoimmune & Connective Tissue Diseases": [
+      "Autoimmune Skin Disease (Category)",
+      "Balanitis Xerotica Obliterans",
+      "Behcet's Disease",
+      "Dermatomyositis",
+      "Lichen Sclerosus",
+      "Lupus Erythematosus",
+      "Lupus Erythematosus / Connective Tissue diseases",
+      "Morphea / Scleroderma"
+    ]
+  },
+  "Neoplasms & Proliferations": {
+    "Malignant & Premalignant Lesions": {
+      "Premalignant Lesions": [
+        "Actinic Cheilitis",
+        "Actinic Keratosis",
+        "Arsenical Keratosis",
+        "Cutaneous Horn"
+      ],
+      "Melanocytic Neoplasms": [
+        "Atypical Melanocytic Lesion / Spitzoid Lesion",
+        "Lentigo Maligna",
+        "Melanoma"
+      ],
+      "Keratinocytic (Epithelial) Neoplasms": [
+        "Basal Cell Carcinoma",
+        "Baso-squamous Carcinoma",
+        "Keratoacanthoma",
+        "Squamous Cell Carcinoma",
+        "Squamous Cell Carcinoma In Situ"
+      ],
+      "Lymphoid & Hematopoietic Neoplasms": [
+        "Blastic Plasmacytoid Dendritic Cell Neoplasm",
+        "Cutaneous Lymphoma",
+        "Leukemia Cutis",
+        "Mycosis Fungoides"
+      ],
+      "Metastatic Disease": [
+        "Cutaneous metastasis",
+        "Metastatic Carcinoma"
+      ],
+      "Vascular Neoplasms": [
+        "Kaposi's Sarcoma"
+      ],
+      "_items_": [
+        "Malignant Lesion / Skin Cancer / Malignant Neoplasm"
+      ]
+    },
+    "Benign Tumors, Growths & Cysts": {
+      "Fibrous & Adipose Tumors": [
+        "Angiofibroma",
+        "Dermatofibroma / Fibroma / Fibrous Papule",
+        "Keloid",
+        "Lipoma",
+        "Skin Tag"
+      ],
+      "Vascular Lesions (Benign)": [
+        "Angiokeratoma",
+        "Benign Telangiectases",
+        "Glomangioma",
+        "Hemangioma",
+        "Lymphangioma",
+        "Port Wine Stain",
+        "Pyogenic Granuloma",
+        "Tufted Angioma",
+        "Vascular Tumors"
+      ],
+      "Muscle Tumors": [
+        "Angioleiomyoma",
+        "Leiomyoma"
+      ],
+      "Neural Tumors": [
+        "Cellular Neurothekeoma",
+        "Neurofibroma",
+        "Neuroma"
+      ],
+      "Adnexal (Appendage) Tumors": {
+        "Sweat Gland (Eccrine/Apocrine)": [
+          "Chondroid Syringoma",
+          "Eccrine Poroma",
+          "Syringocystadenoma Papilliferum",
+          "Syringoma"
+        ],
+        "Hair Follicle": [
+          "Epithelioma Adenoides Cysticum",
+          "Pilomatricoma",
+          "Trichilemmoma",
+          "Trichoblastoma",
+          "Trichofolliculoma",
+          "Warty Dyskeratoma"
+        ],
+        "Sebaceous Gland": [
+          "Fordyce Spots",
+          "Sebaceous Adenoma",
+          "Sebaceous Gland Hyperplasia"
+        ]
+      },
+      "Keratinocytic & Epidermal Proliferations": [
+        "Clear Cell Acanthoma",
+        "Dermatosis Papulosa Nigra",
+        "Dilated Pore Of Winer",
+        "Inverted Follicular Keratosis",
+        "Seborrheic Keratosis"
+      ],
+      "Cysts": [
+        "Cyst",
+        "Epidermal Cyst",
+        "Milia"
+      ],
+      "Melanocytic Lesions (Nevi/Moles)": [
+        "Nevus / Mole / Melanocytic Nevus"
+      ],
+      "Other Proliferative Conditions": [
+        "Reactive Lymphoid Hyperplasia",
+        "Supernumerary Nipple"
+      ],
+      "_items_": [
+        "Benign Epidermal Lesion",
+        "Benign Lesion"
+      ]
+    }
+  },
+  "Reactions to External Agents (Physical, Chemical, Drug-induced)": {
+    "Drug Reactions": [
+      "Acute Generalised Exanthematous Pustulosis",
+      "Drug Reaction / Eruption",
+      "Drug Reaction / Photosensitivity",
+      "Drug Reaction / Pigmentation",
+      "Exanthems / Drug Reaction",
+      "Stevens-Johnson Syndrome / Toxic Epidermal Necrolysis (SJS/TEN)"
+    ],
+    "Physical Trauma & Environmental": {
+      "Temperature & Climate": [
+        "Burn",
+        "Chilblain",
+        "Miliaria",
+        "Superficial Frostbite"
+      ],
+      "Injury & Repair": [
+        "Cat Scratch Injury",
+        "Dehiscence",
+        "Erosion Of Skin",
+        "Granulation Tissue",
+        "Hemorrhage / Hematoma",
+        "Inflicted Skin Lesions",
+        "Neurotic Excoriations",
+        "Scar",
+        "Traumatic Blister",
+        "Traumatic Petechiae",
+        "Ulcer",
+        "Wound / Abrasion"
+      ],
+      "Pressure & Friction": [
+        "Clavus / Callus",
+        "Knuckle Pads"
+      ],
+      "Other": [
+        "Exogenous",
+        "Foreign Body Reaction",
+        "Injection Site Disorder",
+        "Poisoning by Nematocyst"
+      ]
+    },
+    "Photodermatoses (Light-induced Disorders)": [
+      "Cutis Rhomboidalis Nuchae",
+      "Favre Racouchot",
+      "Photodermatosis",
+      "Porphyria",
+      "Solar Elastosis",
+      "Solar Telangiectasia",
+      "Sunburn"
+    ]
+  },
+  "Disorders of Skin Appendages": {
+    "Hair Follicle & Sebaceous Gland Disorders": [
+      "Alopecia",
+      "Hypertrichosis",
+      "Ingrown Hair",
+      "Keratosis Pilaris",
+      "Pseudorhinophyma",
+      "Trichostasis Spinulosa"
+    ],
+    "Nail Disorders": {
+      "Specific Nail Abnormalities": [
+        "Beau's Lines",
+        "Clubbing Of Fingers",
+        "Green Nail",
+        "Half And Half Nail",
+        "Koilonychia",
+        "Leukonychia",
+        "Median Nail Dystrophy",
+        "Onychogryphosis",
+        "Onycholysis",
+        "Onychoschizia",
+        "Pincer Nail Deformity / Syndrome",
+        "Racquet Nail",
+        "Terry's Nails"
+      ],
+      "_items_": [
+        "Nail Disorder",
+        "Nail Dystrophy"
+      ]
+    }
+  }
+}

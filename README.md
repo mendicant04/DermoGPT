@@ -50,6 +50,8 @@ DermoBench evaluates four clinical axes:
 
 The benchmark files included here are derived artifacts and metadata. Original images should be obtained from the corresponding public dataset providers according to their licenses.
 
+Hierarchical diagnosis uses the [903-label mapping](dataset_final/task2/diagnosis_mapping_final_1015.json) to 325 canonical diagnoses, the [bottom-up diagnosis paths](dataset_final/task2/2.1_mcq_hard/diagnosis_hierarchical_final_doc_response_1017.json), and the [top-down diagnosis tree](dataset_final/task2/2.1_mcq_hard/diagnosis_hierarchical_final_doc_response_reverse_1017.json). These files use the default paths expected by the inference script.
+
 ## ⚙️ Installation
 
 Recommended environment:
@@ -164,11 +166,21 @@ dataset_final/benchmark/task4/
 
 Prompt details for model generation and judging are documented in [prompts.md](prompts.md).
 
+The [CCT prompt pools](prompts/cct_prompt_pools.json) contain three ordered closed-set MCQA pools (original, synonymous questions, and direct instructions) and one ordered pool for each open-ended task (T1.1, T1.2, T3.1, and T3.2). Each pool contains eight variants. For K=4, take the first four entries of the corresponding pool in the listed order.
+
+The three MCQA pools share the same first stem. Append `shared_option_suffix` to each MCQA stem and substitute the same `{formatted_options}` for all variants of the example. Substitute the task's morphology schema name for `{schema_name}` in the T1.2 prefixes and T3.2 templates.
+
 ## 📁 Data Release Notes
 
 - This repository is intended for code, prompts, benchmark metadata, and evaluation utilities.
 - Raw dermatology images are not redistributed here.
 - Users should download original images from the source datasets and follow their licenses and intended-use policies.
+- [Data access and reuse](docs/data-governance.md) lists upstream access links and source-specific terms.
+- [CCT proof](docs/cct-proof.md) gives the full single-step proof for the conditional robustness result.
+
+## Code License
+
+The project code is available under the [Apache License 2.0](LICENSE). Model weights, datasets, and original images have separate terms on their release or provider pages.
 
 ## ⚠️ Medical Disclaimer
 

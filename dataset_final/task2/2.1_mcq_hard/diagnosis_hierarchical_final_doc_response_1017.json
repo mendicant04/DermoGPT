@@ -1,0 +1,1454 @@
+{
+  "Abscess": [
+    "Infections & Infestations",
+    "Bacterial Infections"
+  ],
+  "Acanthosis Nigricans": [
+    "Disorders of Pigmentation",
+    "Hyperpigmentation"
+  ],
+  "Acne": [
+    "Inflammatory Dermatoses",
+    "Acneiform Disorders"
+  ],
+  "Acne / Rosacea": [
+    "Inflammatory Dermatoses",
+    "Acneiform Disorders"
+  ],
+  "Acne Keloidalis Nuchae": [
+    "Inflammatory Dermatoses",
+    "Acneiform Disorders"
+  ],
+  "Acne Urticata": [
+    "Inflammatory Dermatoses",
+    "Urticaria & Erythemas"
+  ],
+  "Acral Melanotic Macule": [
+    "Disorders of Pigmentation",
+    "Hyperpigmentation"
+  ],
+  "Acral Persistent Papular Mucinosis": [
+    "Disorders of Keratinization & Mucin Deposition",
+    "Mucinosis"
+  ],
+  "Acrodermatitis Enteropathica": [
+    "Manifestations of Systemic Disease & Other Conditions",
+    "Cutaneous Manifestations of Systemic Disease",
+    "Gastrointestinal"
+  ],
+  "Acrokeratosis Verruciformis": [
+    "Autoimmune, Connective Tissue & Genetic Diseases",
+    "Genodermatoses (Inherited Skin Disorders)"
+  ],
+  "Actinic Cheilitis": [
+    "Neoplasms & Proliferations",
+    "Malignant & Premalignant Lesions",
+    "Premalignant Lesions"
+  ],
+  "Actinic Keratosis": [
+    "Neoplasms & Proliferations",
+    "Malignant & Premalignant Lesions",
+    "Premalignant Lesions"
+  ],
+  "Acute Generalised Exanthematous Pustulosis": [
+    "Reactions to External Agents (Physical, Chemical, Drug-induced)",
+    "Drug Reactions"
+  ],
+  "Alopecia": [
+    "Disorders of Skin Appendages",
+    "Hair Follicle & Sebaceous Gland Disorders"
+  ],
+  "Anetoderma": [
+    "Manifestations of Systemic Disease & Other Conditions",
+    "Miscellaneous & Morphological Terms"
+  ],
+  "Angiofibroma": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Fibrous & Adipose Tumors"
+  ],
+  "Angiokeratoma": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Vascular Lesions (Benign)"
+  ],
+  "Angioleiomyoma": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Muscle Tumors"
+  ],
+  "Angular Cheilitis": [
+    "Inflammatory Dermatoses",
+    "Other Inflammatory Conditions"
+  ],
+  "Annular Erythema": [
+    "Inflammatory Dermatoses",
+    "Urticaria & Erythemas",
+    "Reactive Erythemas"
+  ],
+  "Aplasia Cutis Congenita": [
+    "Autoimmune, Connective Tissue & Genetic Diseases",
+    "Genodermatoses (Inherited Skin Disorders)"
+  ],
+  "Arsenical Keratosis": [
+    "Neoplasms & Proliferations",
+    "Malignant & Premalignant Lesions",
+    "Premalignant Lesions"
+  ],
+  "Atrophic Glossitis": [
+    "Inflammatory Dermatoses",
+    "Other Inflammatory Conditions"
+  ],
+  "Atypical Melanocytic Lesion / Spitzoid Lesion": [
+    "Neoplasms & Proliferations",
+    "Malignant & Premalignant Lesions",
+    "Melanocytic Neoplasms"
+  ],
+  "Autoimmune Skin Disease (Category)": [
+    "Autoimmune, Connective Tissue & Genetic Diseases",
+    "Autoimmune & Connective Tissue Diseases"
+  ],
+  "Bacterial Infections": [
+    "Infections & Infestations",
+    "Bacterial Infections"
+  ],
+  "Balanitis Xerotica Obliterans": [
+    "Autoimmune, Connective Tissue & Genetic Diseases",
+    "Autoimmune & Connective Tissue Diseases"
+  ],
+  "Basal Cell Carcinoma": [
+    "Neoplasms & Proliferations",
+    "Malignant & Premalignant Lesions",
+    "Keratinocytic (Epithelial) Neoplasms"
+  ],
+  "Baso-squamous Carcinoma": [
+    "Neoplasms & Proliferations",
+    "Malignant & Premalignant Lesions",
+    "Keratinocytic (Epithelial) Neoplasms"
+  ],
+  "Beau's Lines": [
+    "Disorders of Skin Appendages",
+    "Nail Disorders",
+    "Specific Nail Abnormalities"
+  ],
+  "Behcet's Disease": [
+    "Autoimmune, Connective Tissue & Genetic Diseases",
+    "Autoimmune & Connective Tissue Diseases"
+  ],
+  "Benign Epidermal Lesion": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts"
+  ],
+  "Benign Lesion": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts"
+  ],
+  "Benign Telangiectases": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Vascular Lesions (Benign)"
+  ],
+  "Blastic Plasmacytoid Dendritic Cell Neoplasm": [
+    "Neoplasms & Proliferations",
+    "Malignant & Premalignant Lesions",
+    "Lymphoid & Hematopoietic Neoplasms"
+  ],
+  "Blister / Bullous Lesion / Vesicles / Bullae": [
+    "Inflammatory Dermatoses",
+    "Vesiculobullous (Blistering) Diseases"
+  ],
+  "Bullosis Diabeticorum": [
+    "Inflammatory Dermatoses",
+    "Vesiculobullous (Blistering) Diseases",
+    "Other Blistering Conditions"
+  ],
+  "Bullous Disease": [
+    "Inflammatory Dermatoses",
+    "Vesiculobullous (Blistering) Diseases"
+  ],
+  "Bullous Pemphigoid": [
+    "Inflammatory Dermatoses",
+    "Vesiculobullous (Blistering) Diseases",
+    "Autoimmune Blistering Diseases"
+  ],
+  "Burn": [
+    "Reactions to External Agents (Physical, Chemical, Drug-induced)",
+    "Physical Trauma & Environmental",
+    "Temperature & Climate"
+  ],
+  "Cafe Au Lait Macule": [
+    "Disorders of Pigmentation",
+    "Hyperpigmentation"
+  ],
+  "Calcinosis Cutis": [
+    "Manifestations of Systemic Disease & Other Conditions",
+    "Cutaneous Manifestations of Systemic Disease"
+  ],
+  "Candidiasis": [
+    "Infections & Infestations",
+    "Fungal Infections (Mycoses)"
+  ],
+  "Cat Scratch Injury": [
+    "Reactions to External Agents (Physical, Chemical, Drug-induced)",
+    "Physical Trauma & Environmental",
+    "Injury & Repair"
+  ],
+  "Cellular Neurothekeoma": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Neural Tumors"
+  ],
+  "Cellulitis / Erysipelas": [
+    "Infections & Infestations",
+    "Bacterial Infections"
+  ],
+  "Chalazion": [
+    "Inflammatory Dermatoses",
+    "Other Inflammatory Conditions"
+  ],
+  "Cheilitis": [
+    "Inflammatory Dermatoses",
+    "Other Inflammatory Conditions"
+  ],
+  "Chilblain": [
+    "Reactions to External Agents (Physical, Chemical, Drug-induced)",
+    "Physical Trauma & Environmental",
+    "Temperature & Climate"
+  ],
+  "Chondroid Syringoma": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Adnexal (Appendage) Tumors",
+    "Sweat Gland (Eccrine/Apocrine)"
+  ],
+  "Clavus / Callus": [
+    "Reactions to External Agents (Physical, Chemical, Drug-induced)",
+    "Physical Trauma & Environmental",
+    "Pressure & Friction"
+  ],
+  "Clear Cell Acanthoma": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Keratinocytic & Epidermal Proliferations"
+  ],
+  "Clubbing Of Fingers": [
+    "Disorders of Skin Appendages",
+    "Nail Disorders",
+    "Specific Nail Abnormalities"
+  ],
+  "Coccidioidomycosis": [
+    "Infections & Infestations",
+    "Fungal Infections (Mycoses)"
+  ],
+  "Condyloma Acuminatum": [
+    "Infections & Infestations",
+    "Viral Infections"
+  ],
+  "Contact Purpura": [
+    "Inflammatory Dermatoses",
+    "Vasculitis & Vascular Disorders"
+  ],
+  "Crowe's Sign": [
+    "Manifestations of Systemic Disease & Other Conditions",
+    "Miscellaneous & Morphological Terms"
+  ],
+  "Cutaneous Amyloidosis": [
+    "Disorders of Keratinization & Mucin Deposition",
+    "Amyloidosis"
+  ],
+  "Cutaneous Horn": [
+    "Neoplasms & Proliferations",
+    "Malignant & Premalignant Lesions",
+    "Premalignant Lesions"
+  ],
+  "Cutaneous Larva Migrans": [
+    "Infections & Infestations",
+    "Parasitic Infestations & Bites",
+    "Worm/Larva Infections"
+  ],
+  "Cutaneous Lymphoma": [
+    "Neoplasms & Proliferations",
+    "Malignant & Premalignant Lesions",
+    "Lymphoid & Hematopoietic Neoplasms"
+  ],
+  "Cutaneous metastasis": [
+    "Neoplasms & Proliferations",
+    "Malignant & Premalignant Lesions",
+    "Metastatic Disease"
+  ],
+  "Cutis Marmorata": [
+    "Manifestations of Systemic Disease & Other Conditions",
+    "Cutaneous Manifestations of Systemic Disease",
+    "Vascular/Circulatory"
+  ],
+  "Cutis Rhomboidalis Nuchae": [
+    "Reactions to External Agents (Physical, Chemical, Drug-induced)",
+    "Photodermatoses (Light-induced Disorders)"
+  ],
+  "Cyst": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Cysts"
+  ],
+  "Darier's Disease": [
+    "Autoimmune, Connective Tissue & Genetic Diseases",
+    "Genodermatoses (Inherited Skin Disorders)"
+  ],
+  "Dehiscence": [
+    "Reactions to External Agents (Physical, Chemical, Drug-induced)",
+    "Physical Trauma & Environmental",
+    "Injury & Repair"
+  ],
+  "Dermatitis Herpetiformis": [
+    "Inflammatory Dermatoses",
+    "Vesiculobullous (Blistering) Diseases",
+    "Autoimmune Blistering Diseases"
+  ],
+  "Dermatofibroma / Fibroma / Fibrous Papule": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Fibrous & Adipose Tumors"
+  ],
+  "Dermatomyositis": [
+    "Autoimmune, Connective Tissue & Genetic Diseases",
+    "Autoimmune & Connective Tissue Diseases"
+  ],
+  "Dermatosis Papulosa Nigra": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Keratinocytic & Epidermal Proliferations"
+  ],
+  "Desquamation": [
+    "Inflammatory Dermatoses",
+    "Eczematous Disorders (Dermatitis)"
+  ],
+  "Dilated Pore Of Winer": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Keratinocytic & Epidermal Proliferations"
+  ],
+  "Discrete Papular Lichen Myxedematosus": [
+    "Disorders of Keratinization & Mucin Deposition",
+    "Mucinosis"
+  ],
+  "Disseminated Actinic Porokeratosis": [
+    "Disorders of Keratinization & Mucin Deposition",
+    "Keratosis & Keratodermas"
+  ],
+  "Drug Reaction / Eruption": [
+    "Reactions to External Agents (Physical, Chemical, Drug-induced)",
+    "Drug Reactions"
+  ],
+  "Drug Reaction / Photosensitivity": [
+    "Reactions to External Agents (Physical, Chemical, Drug-induced)",
+    "Drug Reactions"
+  ],
+  "Drug Reaction / Pigmentation": [
+    "Reactions to External Agents (Physical, Chemical, Drug-induced)",
+    "Drug Reactions"
+  ],
+  "Eccrine Poroma": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Adnexal (Appendage) Tumors",
+    "Sweat Gland (Eccrine/Apocrine)"
+  ],
+  "Ecthyma": [
+    "Infections & Infestations",
+    "Bacterial Infections"
+  ],
+  "Ecthyma Gangrenosum": [
+    "Infections & Infestations",
+    "Bacterial Infections"
+  ],
+  "Eczema / Dermatitis": [
+    "Inflammatory Dermatoses",
+    "Eczematous Disorders (Dermatitis)"
+  ],
+  "Ehlers Danlos Syndrome": [
+    "Autoimmune, Connective Tissue & Genetic Diseases",
+    "Genodermatoses (Inherited Skin Disorders)"
+  ],
+  "Elephantiasis Nostras": [
+    "Manifestations of Systemic Disease & Other Conditions",
+    "Miscellaneous & Morphological Terms"
+  ],
+  "Epidermal Cyst": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Cysts"
+  ],
+  "Epidermal Nevus": [
+    "Autoimmune, Connective Tissue & Genetic Diseases",
+    "Genodermatoses (Inherited Skin Disorders)",
+    "Nevi Syndromes"
+  ],
+  "Epidermolysis Bullosa": [
+    "Autoimmune, Connective Tissue & Genetic Diseases",
+    "Genodermatoses (Inherited Skin Disorders)"
+  ],
+  "Epithelioma Adenoides Cysticum": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Adnexal (Appendage) Tumors",
+    "Hair Follicle"
+  ],
+  "Erosion Of Skin": [
+    "Reactions to External Agents (Physical, Chemical, Drug-induced)",
+    "Physical Trauma & Environmental",
+    "Injury & Repair"
+  ],
+  "Eruptive Xanthoma": [
+    "Manifestations of Systemic Disease & Other Conditions",
+    "Cutaneous Manifestations of Systemic Disease",
+    "Metabolic/Endocrine"
+  ],
+  "Erythema Ab Igne": [
+    "Inflammatory Dermatoses",
+    "Urticaria & Erythemas",
+    "Other Erythemas"
+  ],
+  "Erythema Annulare Centrifugum": [
+    "Inflammatory Dermatoses",
+    "Urticaria & Erythemas",
+    "Reactive Erythemas"
+  ],
+  "Erythema Dyschromicum Perstans": [
+    "Disorders of Pigmentation",
+    "Hyperpigmentation"
+  ],
+  "Erythema Elevatum Diutinum": [
+    "Inflammatory Dermatoses",
+    "Vasculitis & Vascular Disorders"
+  ],
+  "Erythema Gyratum Repens": [
+    "Inflammatory Dermatoses",
+    "Urticaria & Erythemas",
+    "Reactive Erythemas"
+  ],
+  "Erythema Marginatum": [
+    "Inflammatory Dermatoses",
+    "Urticaria & Erythemas",
+    "Reactive Erythemas"
+  ],
+  "Erythema Migrans": [
+    "Infections & Infestations",
+    "Parasitic Infestations & Bites",
+    "Arthropod Bites/Reactions"
+  ],
+  "Erythema Multiforme": [
+    "Inflammatory Dermatoses",
+    "Urticaria & Erythemas",
+    "Reactive Erythemas"
+  ],
+  "Erythema Nodosum": [
+    "Inflammatory Dermatoses",
+    "Urticaria & Erythemas",
+    "Reactive Erythemas"
+  ],
+  "Erythroderma / Exfoliative Dermatitis": [
+    "Manifestations of Systemic Disease & Other Conditions",
+    "Miscellaneous & Morphological Terms"
+  ],
+  "Exanthems / Drug Reaction": [
+    "Reactions to External Agents (Physical, Chemical, Drug-induced)",
+    "Drug Reactions"
+  ],
+  "Exogenous": [
+    "Reactions to External Agents (Physical, Chemical, Drug-induced)",
+    "Physical Trauma & Environmental",
+    "Other"
+  ],
+  "Favre Racouchot": [
+    "Reactions to External Agents (Physical, Chemical, Drug-induced)",
+    "Photodermatoses (Light-induced Disorders)"
+  ],
+  "Flagellate Erythema": [
+    "Inflammatory Dermatoses",
+    "Urticaria & Erythemas",
+    "Reactive Erythemas"
+  ],
+  "Flea Bite Dermatosis": [
+    "Infections & Infestations",
+    "Parasitic Infestations & Bites",
+    "Arthropod Bites/Reactions"
+  ],
+  "Flushing": [
+    "Manifestations of Systemic Disease & Other Conditions",
+    "Miscellaneous & Morphological Terms"
+  ],
+  "Focal Acral Hyperkeratosis": [
+    "Disorders of Keratinization & Mucin Deposition",
+    "Keratosis & Keratodermas"
+  ],
+  "Follicular Mucinosis": [
+    "Disorders of Keratinization & Mucin Deposition",
+    "Mucinosis"
+  ],
+  "Follicular Pustules": [
+    "Inflammatory Dermatoses",
+    "Other Inflammatory Conditions"
+  ],
+  "Folliculitis / Furuncle": [
+    "Infections & Infestations",
+    "Bacterial Infections"
+  ],
+  "Fordyce Spots": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Adnexal (Appendage) Tumors",
+    "Sebaceous Gland"
+  ],
+  "Foreign Body Reaction": [
+    "Reactions to External Agents (Physical, Chemical, Drug-induced)",
+    "Physical Trauma & Environmental",
+    "Other"
+  ],
+  "Fox Fordyce Disease": [
+    "Inflammatory Dermatoses",
+    "Other Inflammatory Conditions"
+  ],
+  "Fungal Infection": [
+    "Infections & Infestations",
+    "Fungal Infections (Mycoses)"
+  ],
+  "Ganglion": [
+    "Manifestations of Systemic Disease & Other Conditions",
+    "Miscellaneous & Morphological Terms"
+  ],
+  "Genodermatoses": [
+    "Autoimmune, Connective Tissue & Genetic Diseases",
+    "Genodermatoses (Inherited Skin Disorders)"
+  ],
+  "Geographic Tongue": [
+    "Inflammatory Dermatoses",
+    "Other Inflammatory Conditions"
+  ],
+  "Glomangioma": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Vascular Lesions (Benign)"
+  ],
+  "Graft Vs Host Disease": [
+    "Manifestations of Systemic Disease & Other Conditions",
+    "Cutaneous Manifestations of Systemic Disease"
+  ],
+  "Granular Parakeratosis": [
+    "Manifestations of Systemic Disease & Other Conditions",
+    "Miscellaneous & Morphological Terms"
+  ],
+  "Granulation Tissue": [
+    "Reactions to External Agents (Physical, Chemical, Drug-induced)",
+    "Physical Trauma & Environmental",
+    "Injury & Repair"
+  ],
+  "Granulomatous Disorder": [
+    "Inflammatory Dermatoses",
+    "Granulomatous Disorders"
+  ],
+  "Green Nail": [
+    "Disorders of Skin Appendages",
+    "Nail Disorders",
+    "Specific Nail Abnormalities"
+  ],
+  "Grover's Disease": [
+    "Inflammatory Dermatoses",
+    "Papulosquamous Disorders"
+  ],
+  "Hailey Hailey Disease": [
+    "Autoimmune, Connective Tissue & Genetic Diseases",
+    "Genodermatoses (Inherited Skin Disorders)"
+  ],
+  "Half And Half Nail": [
+    "Disorders of Skin Appendages",
+    "Nail Disorders",
+    "Specific Nail Abnormalities"
+  ],
+  "Hand Foot And Mouth Disease": [
+    "Infections & Infestations",
+    "Viral Infections",
+    "Viral Exanthems"
+  ],
+  "Hemangioma": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Vascular Lesions (Benign)"
+  ],
+  "Hemorrhage / Hematoma": [
+    "Reactions to External Agents (Physical, Chemical, Drug-induced)",
+    "Physical Trauma & Environmental",
+    "Injury & Repair"
+  ],
+  "Hemorrhagic Bullae": [
+    "Inflammatory Dermatoses",
+    "Vesiculobullous (Blistering) Diseases",
+    "Other Blistering Conditions"
+  ],
+  "Hemosiderin Pigmentation / Stasis Dermatitis / Edema": [
+    "Inflammatory Dermatoses",
+    "Eczematous Disorders (Dermatitis)"
+  ],
+  "Herpes / HPV / STDs": [
+    "Infections & Infestations",
+    "Viral Infections"
+  ],
+  "Herpes Gestationis": [
+    "Inflammatory Dermatoses",
+    "Vesiculobullous (Blistering) Diseases",
+    "Autoimmune Blistering Diseases"
+  ],
+  "Herpes Virus Infection": [
+    "Infections & Infestations",
+    "Viral Infections"
+  ],
+  "Hidradenitis Suppurativa": [
+    "Inflammatory Dermatoses",
+    "Acneiform Disorders"
+  ],
+  "Hyperkeratosis": [
+    "Disorders of Keratinization & Mucin Deposition",
+    "Keratosis & Keratodermas"
+  ],
+  "Hyperlinear Palm": [
+    "Manifestations of Systemic Disease & Other Conditions",
+    "Miscellaneous & Morphological Terms"
+  ],
+  "Hyperpigmentation": [
+    "Disorders of Pigmentation",
+    "Hyperpigmentation"
+  ],
+  "Hypersensitivity Reaction": [
+    "Manifestations of Systemic Disease & Other Conditions",
+    "Miscellaneous & Morphological Terms"
+  ],
+  "Hypertrichosis": [
+    "Disorders of Skin Appendages",
+    "Hair Follicle & Sebaceous Gland Disorders"
+  ],
+  "Hypopigmentation": [
+    "Disorders of Pigmentation",
+    "Hypopigmentation"
+  ],
+  "Ichthyosis": [
+    "Autoimmune, Connective Tissue & Genetic Diseases",
+    "Genodermatoses (Inherited Skin Disorders)"
+  ],
+  "Idiopathic Guttate Hypomelanosis": [
+    "Disorders of Pigmentation",
+    "Hypopigmentation"
+  ],
+  "Impetigo": [
+    "Infections & Infestations",
+    "Bacterial Infections"
+  ],
+  "Incontinentia Pigmenti": [
+    "Autoimmune, Connective Tissue & Genetic Diseases",
+    "Genodermatoses (Inherited Skin Disorders)"
+  ],
+  "Inflammatory / Infectious Disorder": [
+    "Inflammatory Dermatoses",
+    "General / Broad Categories"
+  ],
+  "Inflammatory Changes on Sun-Damaged Skin": [
+    "Inflammatory Dermatoses",
+    "General / Broad Categories"
+  ],
+  "Inflammatory Dermatosis": [
+    "Inflammatory Dermatoses",
+    "General / Broad Categories"
+  ],
+  "Inflammatory Mucinosis": [
+    "Disorders of Keratinization & Mucin Deposition",
+    "Mucinosis"
+  ],
+  "Inflicted Skin Lesions": [
+    "Reactions to External Agents (Physical, Chemical, Drug-induced)",
+    "Physical Trauma & Environmental",
+    "Injury & Repair"
+  ],
+  "Ingrown Hair": [
+    "Disorders of Skin Appendages",
+    "Hair Follicle & Sebaceous Gland Disorders"
+  ],
+  "Injection Site Disorder": [
+    "Reactions to External Agents (Physical, Chemical, Drug-induced)",
+    "Physical Trauma & Environmental",
+    "Other"
+  ],
+  "Intertrigo": [
+    "Inflammatory Dermatoses",
+    "Eczematous Disorders (Dermatitis)"
+  ],
+  "Inverted Follicular Keratosis": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Keratinocytic & Epidermal Proliferations"
+  ],
+  "Jessner Lymphocytic Infiltrate": [
+    "Inflammatory Dermatoses",
+    "Other Inflammatory Conditions"
+  ],
+  "Juvenile Xanthogranuloma": [
+    "Manifestations of Systemic Disease & Other Conditions",
+    "Cutaneous Manifestations of Systemic Disease",
+    "Metabolic/Endocrine"
+  ],
+  "Kaposi's Sarcoma": [
+    "Neoplasms & Proliferations",
+    "Malignant & Premalignant Lesions",
+    "Vascular Neoplasms"
+  ],
+  "Keloid": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Fibrous & Adipose Tumors"
+  ],
+  "Keratoacanthoma": [
+    "Neoplasms & Proliferations",
+    "Malignant & Premalignant Lesions",
+    "Keratinocytic (Epithelial) Neoplasms"
+  ],
+  "Keratoderma": [
+    "Disorders of Keratinization & Mucin Deposition",
+    "Keratosis & Keratodermas"
+  ],
+  "Keratolysis Exfoliativa": [
+    "Disorders of Keratinization & Mucin Deposition",
+    "Keratosis & Keratodermas"
+  ],
+  "Keratosis": [
+    "Disorders of Keratinization & Mucin Deposition",
+    "Keratosis & Keratodermas"
+  ],
+  "Keratosis Pilaris": [
+    "Disorders of Skin Appendages",
+    "Hair Follicle & Sebaceous Gland Disorders"
+  ],
+  "Kerion": [
+    "Infections & Infestations",
+    "Fungal Infections (Mycoses)"
+  ],
+  "Knuckle Pads": [
+    "Reactions to External Agents (Physical, Chemical, Drug-induced)",
+    "Physical Trauma & Environmental",
+    "Pressure & Friction"
+  ],
+  "Koebner Phenomenon": [
+    "Inflammatory Dermatoses",
+    "Papulosquamous Disorders"
+  ],
+  "Koilonychia": [
+    "Disorders of Skin Appendages",
+    "Nail Disorders",
+    "Specific Nail Abnormalities"
+  ],
+  "Kyrle's Disease": [
+    "Disorders of Keratinization & Mucin Deposition",
+    "Keratosis & Keratodermas"
+  ],
+  "Langerhans Cell Histiocytosis": [
+    "Manifestations of Systemic Disease & Other Conditions",
+    "Cutaneous Manifestations of Systemic Disease"
+  ],
+  "Leiomyoma": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Muscle Tumors"
+  ],
+  "Lentigo / Solar Lentigo / Actinic Pigmentation": [
+    "Disorders of Pigmentation",
+    "Hyperpigmentation"
+  ],
+  "Lentigo Maligna": [
+    "Neoplasms & Proliferations",
+    "Malignant & Premalignant Lesions",
+    "Melanocytic Neoplasms"
+  ],
+  "Leukemia Cutis": [
+    "Neoplasms & Proliferations",
+    "Malignant & Premalignant Lesions",
+    "Lymphoid & Hematopoietic Neoplasms"
+  ],
+  "Leukonychia": [
+    "Disorders of Skin Appendages",
+    "Nail Disorders",
+    "Specific Nail Abnormalities"
+  ],
+  "Lichen Amyloidosis": [
+    "Disorders of Keratinization & Mucin Deposition",
+    "Amyloidosis"
+  ],
+  "Lichen Nitidus": [
+    "Inflammatory Dermatoses",
+    "Papulosquamous Disorders"
+  ],
+  "Lichen Planus": [
+    "Inflammatory Dermatoses",
+    "Papulosquamous Disorders"
+  ],
+  "Lichen Sclerosus": [
+    "Autoimmune, Connective Tissue & Genetic Diseases",
+    "Autoimmune & Connective Tissue Diseases"
+  ],
+  "Lichen Simplex Chronicus": [
+    "Inflammatory Dermatoses",
+    "Papulosquamous Disorders"
+  ],
+  "Lichen Spinulosus": [
+    "Inflammatory Dermatoses",
+    "Papulosquamous Disorders"
+  ],
+  "Lichen Striatus": [
+    "Inflammatory Dermatoses",
+    "Papulosquamous Disorders"
+  ],
+  "Light Diseases / Disorders of Pigmentation": [
+    "Disorders of Pigmentation",
+    "General / Broad Categories"
+  ],
+  "Linear Epidermal Nevus": [
+    "Autoimmune, Connective Tissue & Genetic Diseases",
+    "Genodermatoses (Inherited Skin Disorders)",
+    "Nevi Syndromes"
+  ],
+  "Linear Iga Disease": [
+    "Inflammatory Dermatoses",
+    "Vesiculobullous (Blistering) Diseases",
+    "Autoimmune Blistering Diseases"
+  ],
+  "Lipoma": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Fibrous & Adipose Tumors"
+  ],
+  "Livedo Reticularis": [
+    "Inflammatory Dermatoses",
+    "Vasculitis & Vascular Disorders"
+  ],
+  "Lupus Erythematosus": [
+    "Autoimmune, Connective Tissue & Genetic Diseases",
+    "Autoimmune & Connective Tissue Diseases"
+  ],
+  "Lupus Erythematosus / Connective Tissue diseases": [
+    "Autoimmune, Connective Tissue & Genetic Diseases",
+    "Autoimmune & Connective Tissue Diseases"
+  ],
+  "Lymphangioma": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Vascular Lesions (Benign)"
+  ],
+  "Lymphocutaneous Sporotrichosis": [
+    "Infections & Infestations",
+    "Fungal Infections (Mycoses)"
+  ],
+  "Majocchi Granuloma": [
+    "Inflammatory Dermatoses",
+    "Granulomatous Disorders"
+  ],
+  "Mal Perforans": [
+    "Manifestations of Systemic Disease & Other Conditions",
+    "Cutaneous Manifestations of Systemic Disease",
+    "Vascular/Circulatory"
+  ],
+  "Malignant Lesion / Skin Cancer / Malignant Neoplasm": [
+    "Neoplasms & Proliferations",
+    "Malignant & Premalignant Lesions"
+  ],
+  "Median Nail Dystrophy": [
+    "Disorders of Skin Appendages",
+    "Nail Disorders",
+    "Specific Nail Abnormalities"
+  ],
+  "Melanin Pigmentation Due To Exogenous Substance": [
+    "Disorders of Pigmentation",
+    "Hyperpigmentation"
+  ],
+  "Melanoma": [
+    "Neoplasms & Proliferations",
+    "Malignant & Premalignant Lesions",
+    "Melanocytic Neoplasms"
+  ],
+  "Melasma": [
+    "Disorders of Pigmentation",
+    "Hyperpigmentation"
+  ],
+  "Metastatic Carcinoma": [
+    "Neoplasms & Proliferations",
+    "Malignant & Premalignant Lesions",
+    "Metastatic Disease"
+  ],
+  "Milia": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Cysts"
+  ],
+  "Miliaria": [
+    "Reactions to External Agents (Physical, Chemical, Drug-induced)",
+    "Physical Trauma & Environmental",
+    "Temperature & Climate"
+  ],
+  "Molluscum Contagiosum": [
+    "Infections & Infestations",
+    "Viral Infections"
+  ],
+  "Morphea / Scleroderma": [
+    "Autoimmune, Connective Tissue & Genetic Diseases",
+    "Autoimmune & Connective Tissue Diseases"
+  ],
+  "Mucha Habermann Disease": [
+    "Manifestations of Systemic Disease & Other Conditions",
+    "Uncategorized"
+  ],
+  "Mucinosis": [
+    "Disorders of Keratinization & Mucin Deposition",
+    "Mucinosis"
+  ],
+  "Mucosal Melanotic Macule": [
+    "Disorders of Pigmentation",
+    "Hyperpigmentation"
+  ],
+  "Mycosis Fungoides": [
+    "Neoplasms & Proliferations",
+    "Malignant & Premalignant Lesions",
+    "Lymphoid & Hematopoietic Neoplasms"
+  ],
+  "Myiasis": [
+    "Infections & Infestations",
+    "Parasitic Infestations & Bites",
+    "Arthropod Bites/Reactions"
+  ],
+  "Naevus Comedonicus": [
+    "Autoimmune, Connective Tissue & Genetic Diseases",
+    "Genodermatoses (Inherited Skin Disorders)",
+    "Nevi Syndromes"
+  ],
+  "Nail Disorder": [
+    "Disorders of Skin Appendages",
+    "Nail Disorders"
+  ],
+  "Nail Dystrophy": [
+    "Disorders of Skin Appendages",
+    "Nail Disorders"
+  ],
+  "Nail Fungus (Onychomycosis)": [
+    "Infections & Infestations",
+    "Fungal Infections (Mycoses)"
+  ],
+  "Necrobiosis Lipoidica": [
+    "Inflammatory Dermatoses",
+    "Granulomatous Disorders"
+  ],
+  "Nematode Infection": [
+    "Infections & Infestations",
+    "Parasitic Infestations & Bites",
+    "Worm/Larva Infections"
+  ],
+  "Neurofibroma": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Neural Tumors"
+  ],
+  "Neuroma": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Neural Tumors"
+  ],
+  "Neurotic Excoriations": [
+    "Reactions to External Agents (Physical, Chemical, Drug-induced)",
+    "Physical Trauma & Environmental",
+    "Injury & Repair"
+  ],
+  "Neutrophilic Dermatoses": [
+    "Inflammatory Dermatoses",
+    "Neutrophilic Dermatoses"
+  ],
+  "Nevus / Mole / Melanocytic Nevus": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Melanocytic Lesions (Nevi/Moles)"
+  ],
+  "Nevus Anemicus": [
+    "Disorders of Pigmentation",
+    "Hypopigmentation"
+  ],
+  "Nevus Comedonicus": [
+    "Autoimmune, Connective Tissue & Genetic Diseases",
+    "Genodermatoses (Inherited Skin Disorders)",
+    "Nevi Syndromes"
+  ],
+  "Nevus Lipomatosus Superficialis": [
+    "Autoimmune, Connective Tissue & Genetic Diseases",
+    "Genodermatoses (Inherited Skin Disorders)",
+    "Nevi Syndromes"
+  ],
+  "Nevus Sebaceous of Jadassohn": [
+    "Autoimmune, Connective Tissue & Genetic Diseases",
+    "Genodermatoses (Inherited Skin Disorders)",
+    "Nevi Syndromes"
+  ],
+  "Ochronosis": [
+    "Disorders of Pigmentation",
+    "Hyperpigmentation"
+  ],
+  "Onychogryphosis": [
+    "Disorders of Skin Appendages",
+    "Nail Disorders",
+    "Specific Nail Abnormalities"
+  ],
+  "Onycholysis": [
+    "Disorders of Skin Appendages",
+    "Nail Disorders",
+    "Specific Nail Abnormalities"
+  ],
+  "Onychoschizia": [
+    "Disorders of Skin Appendages",
+    "Nail Disorders",
+    "Specific Nail Abnormalities"
+  ],
+  "Other / Not Specified": [
+    "Manifestations of Systemic Disease & Other Conditions",
+    "Uncategorized"
+  ],
+  "Papillomatosis Confluentes And Reticulate": [
+    "Manifestations of Systemic Disease & Other Conditions",
+    "Miscellaneous & Morphological Terms"
+  ],
+  "Parapsoriasis": [
+    "Inflammatory Dermatoses",
+    "Papulosquamous Disorders"
+  ],
+  "Paronychia": [
+    "Infections & Infestations",
+    "Bacterial Infections"
+  ],
+  "Pearl Penile Papules": [
+    "Manifestations of Systemic Disease & Other Conditions",
+    "Miscellaneous & Morphological Terms"
+  ],
+  "Pediculosis Lids": [
+    "Infections & Infestations",
+    "Parasitic Infestations & Bites",
+    "Arthropod Bites/Reactions"
+  ],
+  "Pemphigus": [
+    "Inflammatory Dermatoses",
+    "Vesiculobullous (Blistering) Diseases",
+    "Autoimmune Blistering Diseases"
+  ],
+  "Perforating Dermatosis": [
+    "Disorders of Keratinization & Mucin Deposition",
+    "Keratosis & Keratodermas"
+  ],
+  "Perioral Dermatitis": [
+    "Inflammatory Dermatoses",
+    "Eczematous Disorders (Dermatitis)"
+  ],
+  "Photodermatosis": [
+    "Reactions to External Agents (Physical, Chemical, Drug-induced)",
+    "Photodermatoses (Light-induced Disorders)"
+  ],
+  "Pilomatricoma": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Adnexal (Appendage) Tumors",
+    "Hair Follicle"
+  ],
+  "Pincer Nail Deformity / Syndrome": [
+    "Disorders of Skin Appendages",
+    "Nail Disorders",
+    "Specific Nail Abnormalities"
+  ],
+  "Pitted Keratolysis": [
+    "Infections & Infestations",
+    "Bacterial Infections"
+  ],
+  "Pityriasis Alba": [
+    "Disorders of Pigmentation",
+    "Hypopigmentation"
+  ],
+  "Pityriasis Lichenoides": [
+    "Inflammatory Dermatoses",
+    "Papulosquamous Disorders"
+  ],
+  "Pityriasis Rosea": [
+    "Inflammatory Dermatoses",
+    "Papulosquamous Disorders"
+  ],
+  "Pityriasis Rubra Pilaris": [
+    "Inflammatory Dermatoses",
+    "Papulosquamous Disorders"
+  ],
+  "Poikiloderma": [
+    "Disorders of Pigmentation",
+    "Hyperpigmentation"
+  ],
+  "Poisoning by Nematocyst": [
+    "Reactions to External Agents (Physical, Chemical, Drug-induced)",
+    "Physical Trauma & Environmental",
+    "Other"
+  ],
+  "Porokeratosis": [
+    "Disorders of Keratinization & Mucin Deposition",
+    "Keratosis & Keratodermas"
+  ],
+  "Porphyria": [
+    "Reactions to External Agents (Physical, Chemical, Drug-induced)",
+    "Photodermatoses (Light-induced Disorders)"
+  ],
+  "Port Wine Stain": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Vascular Lesions (Benign)"
+  ],
+  "Prurigo / Prurigo Nodularis": [
+    "Inflammatory Dermatoses",
+    "Other Inflammatory Conditions"
+  ],
+  "Pruritic Urticarial Papules and Plaques of Pregnancy": [
+    "Inflammatory Dermatoses",
+    "Other Inflammatory Conditions"
+  ],
+  "Pseudorhinophyma": [
+    "Disorders of Skin Appendages",
+    "Hair Follicle & Sebaceous Gland Disorders"
+  ],
+  "Pseudoxanthoma Elasticum (PXE)-Like Syndrome": [
+    "Autoimmune, Connective Tissue & Genetic Diseases",
+    "Genodermatoses (Inherited Skin Disorders)"
+  ],
+  "Psoriasis": [
+    "Inflammatory Dermatoses",
+    "Papulosquamous Disorders"
+  ],
+  "Psoriasis / Lichen Planus": [
+    "Inflammatory Dermatoses",
+    "Papulosquamous Disorders"
+  ],
+  "Purpura / Petechiae / Ecchymosis": [
+    "Inflammatory Dermatoses",
+    "Vasculitis & Vascular Disorders"
+  ],
+  "Pustules": [
+    "Inflammatory Dermatoses",
+    "Other Inflammatory Conditions"
+  ],
+  "Pyoderma Gangrenosum": [
+    "Inflammatory Dermatoses",
+    "Neutrophilic Dermatoses"
+  ],
+  "Pyogenic Granuloma": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Vascular Lesions (Benign)"
+  ],
+  "Racquet Nail": [
+    "Disorders of Skin Appendages",
+    "Nail Disorders",
+    "Specific Nail Abnormalities"
+  ],
+  "Reactive Lymphoid Hyperplasia": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Other Proliferative Conditions"
+  ],
+  "Relapsing Polychondritis": [
+    "Inflammatory Dermatoses",
+    "Other Inflammatory Conditions"
+  ],
+  "Rocky Mountain Spotted Fever": [
+    "Infections & Infestations",
+    "Parasitic Infestations & Bites",
+    "Arthropod Bites/Reactions"
+  ],
+  "Rosacea": [
+    "Inflammatory Dermatoses",
+    "Acneiform Disorders"
+  ],
+  "Sarcoidosis": [
+    "Inflammatory Dermatoses",
+    "Granulomatous Disorders"
+  ],
+  "Scabies / Lyme Disease / Infestations and Bites": [
+    "Infections & Infestations",
+    "Parasitic Infestations & Bites"
+  ],
+  "Scar": [
+    "Reactions to External Agents (Physical, Chemical, Drug-induced)",
+    "Physical Trauma & Environmental",
+    "Injury & Repair"
+  ],
+  "Schamberg's Disease / Pigmented Purpuric Eruption": [
+    "Inflammatory Dermatoses",
+    "Vasculitis & Vascular Disorders"
+  ],
+  "Scleromyxedema / Lichenoid Myxedema": [
+    "Disorders of Keratinization & Mucin Deposition",
+    "Mucinosis"
+  ],
+  "Sebaceous Adenoma": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Adnexal (Appendage) Tumors",
+    "Sebaceous Gland"
+  ],
+  "Sebaceous Gland Hyperplasia": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Adnexal (Appendage) Tumors",
+    "Sebaceous Gland"
+  ],
+  "Seborrheic Keratosis": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Keratinocytic & Epidermal Proliferations"
+  ],
+  "Skin Atrophy": [
+    "Manifestations of Systemic Disease & Other Conditions",
+    "Miscellaneous & Morphological Terms"
+  ],
+  "Skin Infection": [
+    "Infections & Infestations",
+    "General / Broad Categories"
+  ],
+  "Skin Tag": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Fibrous & Adipose Tumors"
+  ],
+  "Sneddon-Wilkinson Disease": [
+    "Inflammatory Dermatoses",
+    "Neutrophilic Dermatoses"
+  ],
+  "Solar Elastosis": [
+    "Reactions to External Agents (Physical, Chemical, Drug-induced)",
+    "Photodermatoses (Light-induced Disorders)"
+  ],
+  "Solar Purpura / Actinic Purpura": [
+    "Inflammatory Dermatoses",
+    "Vasculitis & Vascular Disorders"
+  ],
+  "Solar Telangiectasia": [
+    "Reactions to External Agents (Physical, Chemical, Drug-induced)",
+    "Photodermatoses (Light-induced Disorders)"
+  ],
+  "Squamous Cell Carcinoma": [
+    "Neoplasms & Proliferations",
+    "Malignant & Premalignant Lesions",
+    "Keratinocytic (Epithelial) Neoplasms"
+  ],
+  "Squamous Cell Carcinoma In Situ": [
+    "Neoplasms & Proliferations",
+    "Malignant & Premalignant Lesions",
+    "Keratinocytic (Epithelial) Neoplasms"
+  ],
+  "Stevens-Johnson Syndrome / Toxic Epidermal Necrolysis (SJS/TEN)": [
+    "Reactions to External Agents (Physical, Chemical, Drug-induced)",
+    "Drug Reactions"
+  ],
+  "Stomatitis": [
+    "Inflammatory Dermatoses",
+    "Other Inflammatory Conditions"
+  ],
+  "Striae / Stretch Marks": [
+    "Manifestations of Systemic Disease & Other Conditions",
+    "Miscellaneous & Morphological Terms"
+  ],
+  "Sunburn": [
+    "Reactions to External Agents (Physical, Chemical, Drug-induced)",
+    "Photodermatoses (Light-induced Disorders)"
+  ],
+  "Superficial Frostbite": [
+    "Reactions to External Agents (Physical, Chemical, Drug-induced)",
+    "Physical Trauma & Environmental",
+    "Temperature & Climate"
+  ],
+  "Supernumerary Nipple": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Other Proliferative Conditions"
+  ],
+  "Syphilis": [
+    "Infections & Infestations",
+    "Bacterial Infections"
+  ],
+  "Syringocystadenoma Papilliferum": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Adnexal (Appendage) Tumors",
+    "Sweat Gland (Eccrine/Apocrine)"
+  ],
+  "Syringoma": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Adnexal (Appendage) Tumors",
+    "Sweat Gland (Eccrine/Apocrine)"
+  ],
+  "Systemic Disease": [
+    "Manifestations of Systemic Disease & Other Conditions",
+    "Cutaneous Manifestations of Systemic Disease"
+  ],
+  "Terry's Nails": [
+    "Disorders of Skin Appendages",
+    "Nail Disorders",
+    "Specific Nail Abnormalities"
+  ],
+  "Tick Bite": [
+    "Infections & Infestations",
+    "Parasitic Infestations & Bites",
+    "Arthropod Bites/Reactions"
+  ],
+  "Toe Deformity": [
+    "Manifestations of Systemic Disease & Other Conditions",
+    "Miscellaneous & Morphological Terms"
+  ],
+  "Traumatic Blister": [
+    "Reactions to External Agents (Physical, Chemical, Drug-induced)",
+    "Physical Trauma & Environmental",
+    "Injury & Repair"
+  ],
+  "Traumatic Petechiae": [
+    "Reactions to External Agents (Physical, Chemical, Drug-induced)",
+    "Physical Trauma & Environmental",
+    "Injury & Repair"
+  ],
+  "Trichilemmoma": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Adnexal (Appendage) Tumors",
+    "Hair Follicle"
+  ],
+  "Trichoblastoma": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Adnexal (Appendage) Tumors",
+    "Hair Follicle"
+  ],
+  "Trichofolliculoma": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Adnexal (Appendage) Tumors",
+    "Hair Follicle"
+  ],
+  "Trichostasis Spinulosa": [
+    "Disorders of Skin Appendages",
+    "Hair Follicle & Sebaceous Gland Disorders"
+  ],
+  "Tuberculosis Of Skin And Subcutaneous Tissue": [
+    "Infections & Infestations",
+    "Bacterial Infections"
+  ],
+  "Tuberous Sclerosis": [
+    "Autoimmune, Connective Tissue & Genetic Diseases",
+    "Genodermatoses (Inherited Skin Disorders)"
+  ],
+  "Tufted Angioma": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Vascular Lesions (Benign)"
+  ],
+  "Tungiasis": [
+    "Infections & Infestations",
+    "Parasitic Infestations & Bites",
+    "Worm/Larva Infections"
+  ],
+  "Ulcer": [
+    "Reactions to External Agents (Physical, Chemical, Drug-induced)",
+    "Physical Trauma & Environmental",
+    "Injury & Repair"
+  ],
+  "Unilateral Laterothoracic Exanthem": [
+    "Inflammatory Dermatoses",
+    "Other Inflammatory Conditions"
+  ],
+  "Urticaria": [
+    "Inflammatory Dermatoses",
+    "Urticaria & Erythemas"
+  ],
+  "Urticaria Pigmentosa": [
+    "Disorders of Pigmentation",
+    "Hyperpigmentation"
+  ],
+  "Varicella / Chicken Pox Exanthem": [
+    "Infections & Infestations",
+    "Viral Infections",
+    "Viral Exanthems"
+  ],
+  "Varicose Vein": [
+    "Inflammatory Dermatoses",
+    "Vasculitis & Vascular Disorders"
+  ],
+  "Vascular Tumors": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Vascular Lesions (Benign)"
+  ],
+  "Vasculitis": [
+    "Inflammatory Dermatoses",
+    "Vasculitis & Vascular Disorders"
+  ],
+  "Venous Stasis Ulcer": [
+    "Manifestations of Systemic Disease & Other Conditions",
+    "Cutaneous Manifestations of Systemic Disease",
+    "Vascular/Circulatory"
+  ],
+  "Verruciform Xanthoma": [
+    "Manifestations of Systemic Disease & Other Conditions",
+    "Cutaneous Manifestations of Systemic Disease",
+    "Metabolic/Endocrine"
+  ],
+  "Viral Dermatological Disorders": [
+    "Infections & Infestations",
+    "Viral Infections"
+  ],
+  "Viral Exanthem": [
+    "Infections & Infestations",
+    "Viral Infections",
+    "Viral Exanthems"
+  ],
+  "Viral Infections": [
+    "Infections & Infestations",
+    "Viral Infections"
+  ],
+  "Vitiligo": [
+    "Disorders of Pigmentation",
+    "Hypopigmentation"
+  ],
+  "Wart / Verruca": [
+    "Infections & Infestations",
+    "Viral Infections"
+  ],
+  "Warty Dyskeratoma": [
+    "Neoplasms & Proliferations",
+    "Benign Tumors, Growths & Cysts",
+    "Adnexal (Appendage) Tumors",
+    "Hair Follicle"
+  ],
+  "Wound / Abrasion": [
+    "Reactions to External Agents (Physical, Chemical, Drug-induced)",
+    "Physical Trauma & Environmental",
+    "Injury & Repair"
+  ],
+  "Wound Infection": [
+    "Infections & Infestations",
+    "Bacterial Infections"
+  ],
+  "Xanthogranuloma": [
+    "Manifestations of Systemic Disease & Other Conditions",
+    "Cutaneous Manifestations of Systemic Disease",
+    "Metabolic/Endocrine"
+  ],
+  "Xanthomas": [
+    "Manifestations of Systemic Disease & Other Conditions",
+    "Cutaneous Manifestations of Systemic Disease",
+    "Metabolic/Endocrine"
+  ],
+  "Xeroderma Pigmentosum": [
+    "Autoimmune, Connective Tissue & Genetic Diseases",
+    "Genodermatoses (Inherited Skin Disorders)"
+  ],
+  "Xerosis": [
+    "Manifestations of Systemic Disease & Other Conditions",
+    "Miscellaneous & Morphological Terms"
+  ]
+}

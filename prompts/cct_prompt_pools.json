@@ -1,0 +1,78 @@
+{
+  "k4_selection": "first_four_in_pool_order",
+  "closed_set_mcqa": {
+    "shared_option_suffix": "\n{formatted_options}\nRespond with the single best option letter.",
+    "original_pool_K8": [
+      "Which is the most likely diagnosis?",
+      "Based on the skin image, what is the most probable dermatological diagnosis?",
+      "Select the most accurate diagnosis for the lesion shown in this image.",
+      "Which condition below best matches the dermatological presentation in this image?",
+      "Identify the most likely skin disease depicted in this image from the choices provided.",
+      "Given the visual appearance of this lesion, which option represents the primary diagnosis?",
+      "Determine the most plausible clinical diagnosis corresponding to this image.",
+      "From the listed options, choose the diagnosis that best accounts for the visible skin findings."
+    ],
+    "synonymous_question_pool_K8": [
+      "Which is the most likely diagnosis?",
+      "What is the most probable diagnosis for the skin condition shown here?",
+      "Which of the listed diseases is most consistent with this lesion image?",
+      "What dermatological condition is most likely represented in this image?",
+      "Which diagnosis best fits the visual characteristics observed in this skin lesion?",
+      "Among the choices below, which condition most accurately identifies this lesion?",
+      "What is the leading clinical diagnosis based on the appearance of this image?",
+      "Which candidate option corresponds to the most likely skin disorder pictured?"
+    ],
+    "direct_instruction_pool_K8": [
+      "Which is the most likely diagnosis?",
+      "Choose the most likely dermatological diagnosis from the options below.",
+      "Select the single option that best diagnoses the skin lesion in this image.",
+      "Pick the diagnosis most consistent with the visual features in this photograph.",
+      "Indicate the primary skin condition shown in the image using the provided choices.",
+      "Match this dermatological image to its most probable diagnosis below.",
+      "Report the best-fitting clinical diagnosis for this lesion from the list.",
+      "Specify the correct diagnostic category for the depicted skin finding."
+    ]
+  },
+  "open_ended": {
+    "T1.1_pool_K8": [
+      "Write a detailed morphological examination report for this image.",
+      "Summarize all important morphological features visible in this image.",
+      "Provide a comprehensive dermatological description of the lesion shown in this image.",
+      "Document the observable morphological characteristics of this skin lesion in detail.",
+      "Describe all salient visual and morphological findings present in this dermatology image.",
+      "Compose a thorough visual examination note detailing the morphology of this lesion.",
+      "Give a complete clinical morphology report based strictly on the visible features in this image.",
+      "Outline the key morphological appearances and relevant negative visual findings for this lesion."
+    ],
+    "T1.2_pool_K8_prefix": [
+      "Write a detailed morphological examination report for this image. Before any descriptive text, output a <morph> JSON using the {schema_name} schema.",
+      "Provide a structured and narrative morphology assessment for this image. First output a <morph> JSON following the {schema_name} schema, then write the detailed examination report.",
+      "Examine the skin lesion in this image. Begin with a valid <morph> JSON block adhering to the {schema_name} schema, followed by a thorough morphological description.",
+      "Summarize the observable morphological findings of this lesion. Output the {schema_name} attributes inside a <morph> JSON block first, then provide the full descriptive report.",
+      "Document the visual morphology of this dermatological image. Place a {schema_name}-compliant <morph> JSON block before your detailed examination text.",
+      "Generate a morphology-grounded visual report for this lesion. Start with the <morph> JSON object under the {schema_name} schema, followed by the free-text description.",
+      "Analyze the lesion morphology shown here. Output the structured {schema_name} <morph> JSON prior to writing the comprehensive morphological report.",
+      "Perform a detailed morphological inspection of this image. Emit the <morph> JSON block using the {schema_name} schema first, and then present the narrative description."
+    ],
+    "T3.1_pool_K8": [
+      "What skin condition is depicted in this image? Justify your diagnosis with a clear rationale. Output <reasoning> and <final_diagnosis> blocks in that order.",
+      "Identify the dermatological condition shown in this image and explain your diagnostic reasoning. Output <reasoning> followed by <final_diagnosis>.",
+      "Diagnose the skin lesion presented in this image with a step-by-step clinical rationale. Return only <reasoning> and <final_diagnosis> blocks in order.",
+      "Examine this dermatology image, walk through your diagnostic reasoning, and state the final condition using <reasoning> and <final_diagnosis> blocks.",
+      "Based on the visual presentation, what is the most likely skin disease? Provide a clear justification in <reasoning> before giving <final_diagnosis>.",
+      "Assess this lesion and explain how the visible features support your conclusion. Format your response strictly as <reasoning> then <final_diagnosis>.",
+      "Determine the skin disorder depicted here and articulate the clinical logic behind your decision using <reasoning> and <final_diagnosis> tags.",
+      "Analyze the clinical appearance of this lesion to reach a diagnosis, presenting your rationale in <reasoning> followed by <final_diagnosis>."
+    ],
+    "T3.2_pool_K8": [
+      "Analyze the clinical presentation in this image. What is your differential diagnosis, and what is the final conclusion? Explain your reasoning. Then output EXACTLY three blocks in this order and nothing else: <reasoning>, <morph> ({schema_name} JSON), <final_diagnosis>.",
+      "What skin condition is depicted in this image? Justify your diagnosis with a clear rationale, then output a <morph> ({schema_name} JSON) block before the final diagnosis. Output EXACTLY <reasoning>, <morph>, and <final_diagnosis> in that order.",
+      "Evaluate the visual findings in this dermatology image, discuss the diagnostic rationale, extract structured {schema_name} attributes, and conclude with the diagnosis. Output strictly in the order: <reasoning>, <morph>, <final_diagnosis>.",
+      "Perform a morphology-grounded diagnostic assessment of this lesion. Provide your reasoning, structured {schema_name} morphology JSON, and final diagnosis in EXACTLY three ordered blocks: <reasoning>, <morph>, <final_diagnosis>.",
+      "Inspect this skin lesion and explain your differential and final diagnosis, anchoring it to structured {schema_name} features. Emit ONLY <reasoning>, <morph>, and <final_diagnosis> in this exact sequence.",
+      "Examine the depicted lesion, detail your clinical reasoning, record the observable {schema_name} attributes, and state your final diagnosis. Return EXACTLY three blocks in order: <reasoning>, <morph>, <final_diagnosis>.",
+      "Determine the most likely diagnosis for this image by reasoning from visible morphology and listing the {schema_name} attributes. Format output strictly as <reasoning>, <morph>, <final_diagnosis> with nothing else.",
+      "Assess this dermatological image step by step, summarize the structured {schema_name} visual features, and give the final diagnostic conclusion using EXACTLY the three ordered blocks: <reasoning>, <morph>, <final_diagnosis>."
+    ]
+  }
+}
